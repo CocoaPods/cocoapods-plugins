@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     cocoapods-plugins (0.1.0)
+      cocoapods
 
 GEM
   remote: https://rubygems.org/
@@ -71,7 +72,6 @@ PLATFORMS
 DEPENDENCIES
   bacon
   bundler (~> 1.3)
-  cocoapods
   cocoapods-plugins!
   mocha-on-bacon
   prettybacon
