@@ -7,8 +7,11 @@ require 'bundler/setup'
 require 'bacon'
 require 'mocha-on-bacon'
 require 'pretty_bacon'
-require 'cocoapods'
 
+require 'webmock'
+include WebMock::API
+
+require 'cocoapods'
 require 'cocoapods_plugin'
 
 #-----------------------------------------------------------------------------#
