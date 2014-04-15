@@ -3,7 +3,7 @@ PATH
   specs:
     cocoapods-plugins (0.1.0)
       cocoapods
-      nap (~> 0.7)
+      nap
 
 GEM
   remote: https://rubygems.org/
