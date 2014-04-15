@@ -1,4 +1,4 @@
-require 'open-uri'
+require 'rest'
 require 'json'
 
 # The CocoaPods namespace
@@ -9,6 +9,9 @@ module Pod
     # The pod plugins command.
     #
     class Plugins < Command
+
+      PLUGINS_URL = 'https://raw.githubusercontent.com/CocoaPods/cocoapods.org/master/data/plugins.json'
+
       attr_accessor :json
 
       self.summary = 'Show available CocoaPods plugins'
@@ -18,8 +21,10 @@ module Pod
       DESC
 
       def download_json
-        response = open('https://raw.githubusercontent.com/CocoaPods/cocoapods.org/master/data/plugins.json')
-        @json = JSON.parse(response.read)
+        response = REST.get(PLUGINS_URL)
+        if response.ok?
+          @json = JSON.parse(response.body)
+        end
       end
 
       def installed?(gemname)

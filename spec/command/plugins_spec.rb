@@ -23,16 +23,23 @@ module Pod
     end
 
     it "downloads the json file" do
-      json_fixture = fixture('plugins.json')
-      @command.stubs(:open).returns(File.open(json_fixture))
+      json = File.read(fixture('plugins.json'))
+      stub_request(:get, Command::Plugins::PLUGINS_URL).to_return(:status => 200, :body => json, :headers => {})
       @command.download_json
       @command.json.should.not.be.nil?
       @command.json.should.be.kind_of? Hash
       @command.json['plugins'].size.should.eql? 2
     end
 
+    it "handles empty/bad JSON" do
+      stub_request(:get, Command::Plugins::PLUGINS_URL).to_return(:status => 200, :body => "This is not JSON", :headers => {})
+      @command.run
+      UI.output.should.include("Could not download plugins list from cocoapods.org")
+      @command.json.should.be.nil?
+    end
+
     it "notifies the user if the download fails" do
-      @command.stubs(:open).throws("404 File Not Found")
+      stub_request(:get, Command::Plugins::PLUGINS_URL).to_return(:status => [404, "Not Found"])
       @command.run
       UI.output.should.include("Could not download plugins list from cocoapods.org")
       @command.json.should.be.nil?
