@@ -5,12 +5,8 @@ task :default => "spec"
 # Bootstrap
 #-----------------------------------------------------------------------------#
 
-task :bootstrap, :use_bundle_dir? do |t, args|
-  if args[:use_bundle_dir?]
-    sh "bundle install --path ./travis_bundle_dir"
-  else
-    sh "bundle install"
-  end
+task :bootstrap do
+  sh "bundle install"
 end
 
 # Spec

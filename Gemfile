@@ -4,6 +4,7 @@ gemspec
 
 group :development do
   gem 'bacon'
+  gem 'coveralls', :require => false
   gem 'mocha-on-bacon'
   gem 'prettybacon'
   gem 'webmock'
