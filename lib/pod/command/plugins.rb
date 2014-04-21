@@ -70,6 +70,10 @@ module Pod
 
       #-----------------------------------------------------------------------#
 
+      # The create subcommand. Used to create a new plugin using either the
+      # default template (CocoaPods/cocoapods-plugin-template) or a custom
+      # template
+      #
       class Create < Plugins
         self.summary = 'Creates a new plugin'
 
@@ -117,7 +121,7 @@ module Pod
         #
         def clone_template
           UI.section("Creating `#{@name}` plugin") do
-            git!"clone '#{template_repo_url}' #{@name}"
+            git! "clone '#{template_repo_url}' #{@name}"
           end
         end
 
@@ -128,7 +132,7 @@ module Pod
         def configure_template
           UI.section("Configuring template") do
             Dir.chdir(@name) do
-              if File.exists? "configure"
+              if File.file? "configure"
                 system "./configure #{@name}"
               else
                 UI.warn "Template does not have a configure file."
