@@ -82,3 +82,22 @@ module Bacon
     end
   end
 end
+
+#-----------------------------------------------------------------------------#
+
+# Pod namespace
+#
+module SpecHelper
+  # Add this as an extention into the Create specs
+  module PluginCreateCommand
+
+    def argv(*args)
+      CLAide::ARGV.new(args)
+    end
+
+    def create_command(args)
+      Pod::Command::Plugins::Create.new(args)
+    end
+
+  end
+end

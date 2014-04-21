@@ -92,7 +92,7 @@ module Pod
 
         def validate!
           super
-          help! "A name for the plugin is required." unless @name
+          help! "A name for the plugin is required." if @name.nil? || @name.empty?
           help! "The plugin name cannot contain spaces." if @name.match(/\s/)
         end
 
