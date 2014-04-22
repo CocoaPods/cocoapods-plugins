@@ -37,7 +37,7 @@ module Pod
       end
 
       def run
-        UI.puts "Downloading Plugins list..."
+        UI.puts 'Downloading Plugins list...'
         begin
           download_json unless json
         rescue => e
@@ -45,7 +45,7 @@ module Pod
         end
 
         if !json
-          UI.puts "Could not download plugins list from cocoapods.org"
+          UI.puts 'Could not download plugins list from cocoapods.org'
         else
           print_plugins
         end
@@ -92,8 +92,8 @@ module Pod
 
         def validate!
           super
-          help! "A name for the plugin is required." if @name.nil? || @name.empty?
-          help! "The plugin name cannot contain spaces." if @name.match(/\s/)
+          help! 'A name for the plugin is required.' if @name.nil? || @name.empty?
+          help! 'The plugin name cannot contain spaces.' if @name.match(/\s/)
         end
 
         def run
@@ -111,8 +111,8 @@ module Pod
         executable :git
         executable :ruby
 
-        TEMPLATE_REPO = "https://github.com/CocoaPods/cocoapods-plugin-template.git"
-        TEMPLATE_INFO_URL = "https://github.com/CocoaPods/cocoapods-plugin-template"
+        TEMPLATE_REPO = 'https://github.com/CocoaPods/cocoapods-plugin-template.git'
+        TEMPLATE_INFO_URL = 'https://github.com/CocoaPods/cocoapods-plugin-template'
 
         # Clones the template from the remote in the working directory using
         # the name of the plugin.
@@ -130,12 +130,12 @@ module Pod
         # @return [void]
         #
         def configure_template
-          UI.section("Configuring template") do
+          UI.section('Configuring template') do
             Dir.chdir(@name) do
-              if File.file? "configure"
+              if File.file? 'configure'
                 system "./configure #{@name}"
               else
-                UI.warn "Template does not have a configure file."
+                UI.warn 'Template does not have a configure file.'
               end
             end
           end

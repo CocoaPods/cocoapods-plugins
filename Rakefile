@@ -1,24 +1,24 @@
-require "bundler/gem_tasks"
+require 'bundler/gem_tasks'
 
-task :default => "spec"
+task :default => 'spec'
 
 # Bootstrap
 #-----------------------------------------------------------------------------#
 
 task :bootstrap do
-  sh "bundle install"
+  sh 'bundle install'
 end
 
 # Spec
 #-----------------------------------------------------------------------------#
 
-desc "Runs all the specs"
+desc 'Runs all the specs'
 task :spec do
   start_time = Time.now
   sh "bundle exec bacon #{specs('**')}"
   duration = Time.now - start_time
   puts "Tests completed in #{duration}s"
-  Rake::Task["rubocop"].invoke
+  Rake::Task['rubocop'].invoke
 end
 
 def specs(dir)
@@ -36,6 +36,6 @@ task :rubocop do
     result = cli.run(FileList['{spec,lib}/**/*.rb'])
     abort('RuboCop failed!') unless result == 0
   else
-    puts "[!] Ruby > 1.9 is required to run style checks"
+    puts '[!] Ruby > 1.9 is required to run style checks'
   end
 end
