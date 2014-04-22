@@ -44,10 +44,10 @@ module Pod
           UI.puts e.message
         end
 
-        if !json
-          UI.puts 'Could not download plugins list from cocoapods.org'
-        else
+        if json
           print_plugins
+        else
+          UI.puts 'Could not download plugins list from cocoapods.org'
         end
       end
 
@@ -55,16 +55,17 @@ module Pod
         UI.puts "Available CocoaPods Plugins\n\n"
 
         @json['plugins'].each do |plugin|
-          UI.puts "Name: #{plugin['name']}"
 
-          if installed?(plugin['gem'])
-            UI.puts "Gem: #{plugin['gem']}".green
-          else
-            UI.puts "Gem: #{plugin['gem']}".yellow
+          plugin_name = "-> #{plugin['name']}"
+          plugin_colored_name = installed?(plugin['gem']) ? plugin_name.green : plugin_name.yellow
+
+          UI.title(plugin_colored_name, '', 1) do
+            UI.puts_indented plugin['description']
+            UI.labeled('Gem', plugin['gem'])
+            UI.labeled('URL',   plugin['url'])
+            UI.labeled('Author', plugin['author']) if self.verbose?
           end
 
-          UI.puts "URL: #{plugin['url']}"
-          UI.puts "\n#{plugin['description']}\n\n"
         end
       end
 
