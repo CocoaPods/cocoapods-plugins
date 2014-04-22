@@ -8,6 +8,12 @@ Gem::Specification.new do |spec|
   spec.version       = CocoapodsPlugins::VERSION
   spec.authors       = ['David Grandinetti']
   spec.summary       = %q{CocoaPods plugin which shows info about available CocoaPods plugins.}
+  spec.description   = <<-DESC
+                         This CocoaPods plugin shows information about all available CocoaPods plugins
+                         (yes, this is very meta!).
+                         This CP plugin adds the "pod plugins" command to CocoaPods so that you can list
+                         all plugins (registered in the reference JSON hosted at CocoaPods/cocoapods.org)
+                       DESC
   spec.homepage      = 'https://github.com/cocoapods/cocoapods-plugins'
   spec.license       = 'MIT'
 
