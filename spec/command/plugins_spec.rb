@@ -76,7 +76,7 @@ module Pod
       @command = search_command(argv)
       # rubocop:disable Lambda
       lambda { @command.validate! }
-           .should.raise(CLAide::Help)
+            .should.raise(CLAide::Help)
             .message.should.match(/A search query is required./)
       # rubocop:enable Lambda
     end
@@ -94,7 +94,7 @@ module Pod
       @command = search_command(argv('[invalid'))
       # rubocop:disable Lambda
       lambda { @command.validate! }
-           .should.raise(CLAide::Help)
+            .should.raise(CLAide::Help)
             .message.should.match(/A valid regular expression is required./)
       # rubocop:enable Lambda
     end
