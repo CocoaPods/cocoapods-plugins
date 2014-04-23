@@ -88,7 +88,7 @@ end
 # Pod namespace
 #
 module SpecHelper
-  # Add this as an extention into the Create specs
+  # Add this as an extension into the Create specs
   module PluginCreateCommand
 
     def argv(*args)
@@ -97,6 +97,19 @@ module SpecHelper
 
     def create_command(args)
       Pod::Command::Plugins::Create.new(args)
+    end
+
+  end
+
+  # Add this as an extension into the Search specs
+  module PluginSearchCommand
+
+    def argv(*args)
+      CLAide::ARGV.new(args)
+    end
+
+    def search_command(args)
+      Pod::Command::Plugins::Search.new(args)
     end
 
   end
