@@ -34,3 +34,7 @@ build/
 .rvmrc
 
 /coverage/
+
+# RubyMine Editor
+.idea
+
