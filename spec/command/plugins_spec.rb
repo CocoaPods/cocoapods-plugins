@@ -64,6 +64,10 @@ module Pod
   describe Command::Plugins::Search do
     extend SpecHelper::PluginSearchCommand
 
+    before do
+      UI.output = ''
+    end
+
     it 'registers itself' do
       Command.parse(%w(plugins search)).should.be.instance_of Command::Plugins::Search
     end
@@ -77,7 +81,7 @@ module Pod
       # rubocop:enable Lambda
     end
 
-    it 'should require a non-empty name is passed in' do
+    it 'should require a non-empty query is passed in' do
       @command = search_command(argv(''))
       # rubocop:disable Lambda
       lambda { @command.validate! }
@@ -100,7 +104,9 @@ module Pod
       stub_request(:get, Command::Plugins::PLUGINS_URL).to_return(:status => 200, :body => json, :headers => {})
       @command = search_command(argv('search'))
       @command.run
+      UI.output.should.not.include('-> CocoaPods Fake Gem')
       UI.output.should.include('-> CocoaPods Searchable Fake Gem')
+      UI.output.should.not.include('-> Bacon')
     end
 
     it 'should filter plugins by name and description when full search' do
@@ -110,11 +116,16 @@ module Pod
       @command.run
       UI.output.should.include('-> CocoaPods Fake Gem')
       UI.output.should.include('-> CocoaPods Searchable Fake Gem')
+      UI.output.should.not.include('-> Bacon')
     end
   end
 
   describe Command::Plugins::Create do
     extend SpecHelper::PluginCreateCommand
+
+    before do
+      UI.output = ''
+    end
 
     it 'registers itself' do
       Command.parse(%w(plugins create)).should.be.instance_of Command::Plugins::Create
