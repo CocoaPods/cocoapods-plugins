@@ -2,7 +2,9 @@
 
 ## 0.1.1
 
-* Improved output formatting (and fixing some coding conventions)
+* Improved output formatting and fixing some coding conventions
+  [Olivier Halligon](https://github.com/AliSoftware)
+* Added `search` subcommand to search plugins by name, author and description
   [Olivier Halligon](https://github.com/AliSoftware)
 
 ## 0.1.0

@@ -28,7 +28,7 @@ module Pod
       @command.download_json
       @command.json.should.not.be.nil?
       @command.json.should.be.kind_of? Hash
-      @command.json['plugins'].size.should.eql? 2
+      @command.json['plugins'].size.should.eql? 3
     end
 
     it 'handles empty/bad JSON' do
@@ -61,8 +61,71 @@ module Pod
 
   end
 
+  describe Command::Plugins::Search do
+    extend SpecHelper::PluginSearchCommand
+
+    before do
+      UI.output = ''
+    end
+
+    it 'registers itself' do
+      Command.parse(%w(plugins search)).should.be.instance_of Command::Plugins::Search
+    end
+
+    it 'should require a query is passed in' do
+      @command = search_command(argv)
+      # rubocop:disable Lambda
+      lambda { @command.validate! }
+            .should.raise(CLAide::Help)
+            .message.should.match(/A search query is required./)
+      # rubocop:enable Lambda
+    end
+
+    it 'should require a non-empty query is passed in' do
+      @command = search_command(argv(''))
+      # rubocop:disable Lambda
+      lambda { @command.validate! }
+            .should.raise(CLAide::Help)
+            .message.should.match(/A search query is required./)
+      # rubocop:enable Lambda
+    end
+
+    it 'should require a valid regex' do
+      @command = search_command(argv('[invalid'))
+      # rubocop:disable Lambda
+      lambda { @command.validate! }
+            .should.raise(CLAide::Help)
+            .message.should.match(/A valid regular expression is required./)
+      # rubocop:enable Lambda
+    end
+
+    it 'should filter plugins by name when no full search' do
+      json = File.read(fixture('plugins.json'))
+      stub_request(:get, Command::Plugins::PLUGINS_URL).to_return(:status => 200, :body => json, :headers => {})
+      @command = search_command(argv('search'))
+      @command.run
+      UI.output.should.not.include('-> CocoaPods Fake Gem')
+      UI.output.should.include('-> CocoaPods Searchable Fake Gem')
+      UI.output.should.not.include('-> Bacon')
+    end
+
+    it 'should filter plugins by name and description when full search' do
+      json = File.read(fixture('plugins.json'))
+      stub_request(:get, Command::Plugins::PLUGINS_URL).to_return(:status => 200, :body => json, :headers => {})
+      @command = search_command(argv('--full', 'search'))
+      @command.run
+      UI.output.should.include('-> CocoaPods Fake Gem')
+      UI.output.should.include('-> CocoaPods Searchable Fake Gem')
+      UI.output.should.not.include('-> Bacon')
+    end
+  end
+
   describe Command::Plugins::Create do
     extend SpecHelper::PluginCreateCommand
+
+    before do
+      UI.output = ''
+    end
 
     it 'registers itself' do
       Command.parse(%w(plugins create)).should.be.instance_of Command::Plugins::Create
