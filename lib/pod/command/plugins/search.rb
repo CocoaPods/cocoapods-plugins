@@ -18,7 +18,7 @@ module Pod
                 * With --full, it searches by name but also by author and description.
         DESC
 
-        self.arguments = 'QUERY'
+        self.arguments = '[QUERY]'
 
         def self.options
           [
