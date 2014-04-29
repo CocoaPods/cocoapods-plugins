@@ -91,12 +91,8 @@ module SpecHelper
   # Add this as an extension into the Create specs
   module PluginCreateCommand
 
-    def argv(*args)
-      CLAide::ARGV.new(args)
-    end
-
-    def create_command(args)
-      Pod::Command::Plugins::Create.new(args)
+    def create_command(*args)
+      Pod::Command::Plugins::Create.new CLAide::ARGV.new(args)
     end
 
   end
@@ -104,12 +100,8 @@ module SpecHelper
   # Add this as an extension into the Search specs
   module PluginSearchCommand
 
-    def argv(*args)
-      CLAide::ARGV.new(args)
-    end
-
-    def search_command(args)
-      Pod::Command::Plugins::Search.new(args)
+    def search_command(*args)
+      Pod::Command::Plugins::Search.new CLAide::ARGV.new(args)
     end
 
   end

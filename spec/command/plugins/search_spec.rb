@@ -18,14 +18,14 @@ module Pod
     #--- JSON handling
 
     it 'has a json attribute that starts out nil' do
-      @command = search_command(argv)
+      @command = search_command
       @command.json.should.be.nil?
     end
 
     it 'downloads the json file' do
       json = File.read(fixture('plugins.json'))
       stub_request(:get, Command::Plugins::Search::PLUGINS_URL).to_return(:status => 200, :body => json, :headers => {})
-      @command = search_command(argv)
+      @command = search_command
       @command.instance_eval { download_json } # private method requires the use of instance_eval to be called for testing
       @command.json.should.not.be.nil?
       @command.json.should.be.kind_of? Hash
@@ -34,7 +34,7 @@ module Pod
 
     it 'handles empty/bad JSON' do
       stub_request(:get, Command::Plugins::Search::PLUGINS_URL).to_return(:status => 200, :body => 'This is not JSON', :headers => {})
-      @command = search_command(argv)
+      @command = search_command
       @command.run
       UI.output.should.include('Could not download plugins list from cocoapods.org')
       @command.json.should.be.nil?
@@ -50,7 +50,7 @@ module Pod
     #--- Output printing
 
     it 'prints out all plugins when no query passed' do
-      @command = search_command(argv)
+      @command = search_command
       @command.json = JSON.parse(File.read(fixture('plugins.json')))
       @command.run
       UI.output.should.include('github.com/CocoaPods/cocoapods-fake-1')
@@ -65,7 +65,7 @@ module Pod
     end
 
     it 'warns when --full is used with no query' do
-      @command = search_command(argv('--full'))
+      @command = search_command('--full')
       @command.validate!
       UI.warnings.should.include('`--full` flag is useless without a query')
     end
@@ -73,7 +73,7 @@ module Pod
     #--- Query
 
     it 'should require a valid regex as query' do
-      @command = search_command(argv('[invalid'))
+      @command = search_command('[invalid')
       # rubocop:disable Lambda
       lambda { @command.validate! }
       .should.raise(CLAide::Help)
@@ -82,7 +82,7 @@ module Pod
     end
 
     it 'should filter plugins by name when no full search' do
-      @command = search_command(argv('search'))
+      @command = search_command('search')
       @command.json = JSON.parse(File.read(fixture('plugins.json')))
       @command.run
       UI.output.should.not.include('-> CocoaPods Fake Gem')
@@ -91,7 +91,7 @@ module Pod
     end
 
     it 'should filter plugins by name and description when full search' do
-      @command = search_command(argv('--full', 'search'))
+      @command = search_command('--full', 'search')
       @command.json = JSON.parse(File.read(fixture('plugins.json')))
       @command.run
       UI.output.should.include('-> CocoaPods Fake Gem')
