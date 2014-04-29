@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     cocoapods-plugins (0.1.1)
-      cocoapods
       nap
 
 GEM
@@ -99,6 +98,7 @@ PLATFORMS
 DEPENDENCIES
   bacon
   bundler (~> 1.3)
+  cocoapods
   cocoapods-plugins!
   coveralls
   mocha-on-bacon
