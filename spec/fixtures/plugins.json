@@ -1,9 +1,9 @@
 {
 	"plugins":[
 		{
-			"gem":"cocoapods-fake-fake-fake",
+			"gem":"cocoapods-fake-fake-fake-1",
 		    "name":"CocoaPods Fake Gem",
-		    "url":"https://github.com/CocoaPods/cocoapods-fake",
+		    "url":"https://github.com/CocoaPods/cocoapods-fake-1",
 		    "description":"A Pod that should not exist and should only be found by full search"
 		},
 		{
