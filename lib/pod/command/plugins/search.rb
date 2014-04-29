@@ -13,8 +13,9 @@ module Pod
 
         self.summary = 'Search for known plugins'
         self.description = <<-DESC
-                Search plugins whose name contains the given text (ignoring case).
-                With --full, search by name but also author and description
+                Searches plugins whose name contains the given text (ignoring case).
+                * Without any QUERY, it lists all known plugins.
+                * With --full, it searches by name but also by author and description.
         DESC
 
         self.arguments = 'QUERY'
