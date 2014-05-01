@@ -11,7 +11,7 @@ module Pod
       @command = Command::Plugins.new(argv)
     end
 
-    it 'registers itself and use the default subcommand' do
+    it 'registers itself and uses the default subcommand' do
       Command.parse(%w(plugins)).should.be.instance_of Command::Plugins::List
     end
 

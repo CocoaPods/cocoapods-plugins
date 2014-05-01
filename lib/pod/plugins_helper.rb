@@ -14,6 +14,7 @@ module Pod
     # @return [Hash] The hash representing the JSON with all known plugins
     #
     def self.download_json
+      UI.puts 'Downloading Plugins list...'
       response = REST.get(PLUGINS_URL)
       if response.ok?
         begin
@@ -31,7 +32,6 @@ module Pod
     # @return [Array] all known plugins, as listed in the downloaded JSON
     #
     def self.known_plugins
-      UI.puts 'Downloading Plugins list...'
       json = download_json
       json['plugins']
     end
