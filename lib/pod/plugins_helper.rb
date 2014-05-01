@@ -45,7 +45,7 @@ module Pod
     #        false only searches in the plugin's name.
     #        true searches in the plugin's name, author and description.
     #
-    # @return all plugins matching the query
+    # @return [Array] all plugins matching the query
     #
     def self.matching_plugins(query, full_text_search)
       query_regexp = /#{query}/i
@@ -63,6 +63,8 @@ module Pod
     #
     # @param [String] gem_name
     #        The name of the plugin gem to test
+    #
+    # @return [Bool] true if the gem is installed, false otherwise.
     #
     def self.gem_installed?(gem_name)
       if Gem::Specification.methods.include?(:find_all_by_name)
