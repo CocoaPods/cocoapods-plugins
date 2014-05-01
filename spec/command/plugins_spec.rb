@@ -12,7 +12,7 @@ module Pod
     end
 
     it 'registers itself and use the default subcommand' do
-      Command.parse(%w(plugins)).should.be.instance_of Command::Plugins::Search
+      Command.parse(%w(plugins)).should.be.instance_of Command::Plugins::List
     end
 
     it 'exists' do

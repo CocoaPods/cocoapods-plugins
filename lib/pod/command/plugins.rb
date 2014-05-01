@@ -10,15 +10,16 @@ module Pod
     #
     class Plugins < Command
 
+      require 'pod/command/plugins/list'
       require 'pod/command/plugins/search'
       require 'pod/command/plugins/create'
 
       self.abstract_command = true
-      self.default_subcommand = 'search'
+      self.default_subcommand = 'list'
 
       self.summary = 'Show available CocoaPods plugins'
       self.description = <<-DESC
-        Shows the available CocoaPods plugins and if you have them installed or not.
+        Lists or searches the available CocoaPods plugins and show if you have them installed or not.
         Also allows you to quickly create a new Cocoapods plugin using a provided template.
       DESC
 

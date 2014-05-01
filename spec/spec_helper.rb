@@ -85,11 +85,23 @@ end
 
 #-----------------------------------------------------------------------------#
 
-# Pod namespace
+# SpecHelper namespace
 #
 module SpecHelper
+
+  # Add this as an extension into the Search and List specs to help stub the plugins.json request
+  module PluginsStubs
+    require File.expand_path '../lib/pod/plugins_helper', File.dirname(__FILE__)
+
+    def stub_plugins_json_request(json = nil, status = 200)
+      body = json || File.read(fixture('plugins.json'))
+      stub_request(:get, Pod::PluginsHelper::PLUGINS_URL).to_return(:status => status, :body => body, :headers => {})
+    end
+
+  end
+
   # Add this as an extension into the Create specs
-  module PluginCreateCommand
+  module PluginsCreateCommand
 
     def create_command(*args)
       Pod::Command::Plugins::Create.new CLAide::ARGV.new(args)
@@ -98,7 +110,7 @@ module SpecHelper
   end
 
   # Add this as an extension into the Search specs
-  module PluginSearchCommand
+  module PluginsSearchCommand
 
     def search_command(*args)
       Pod::Command::Plugins::Search.new CLAide::ARGV.new(args)

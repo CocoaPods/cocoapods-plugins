@@ -5,7 +5,7 @@ require File.expand_path('../../../spec_helper', __FILE__)
 module Pod
 
   describe Command::Plugins::Create do
-    extend SpecHelper::PluginCreateCommand
+    extend SpecHelper::PluginsCreateCommand
 
     before do
       UI.output = ''
@@ -14,6 +14,8 @@ module Pod
     it 'registers itself' do
       Command.parse(%w(plugins create)).should.be.instance_of Command::Plugins::Create
     end
+
+    #--- Validation
 
     it 'should require a name is passed in' do
       @command = create_command
@@ -41,6 +43,8 @@ module Pod
       .message.should.match(/The plugin name cannot contain spaces./)
       # rubocop:enable Lambda
     end
+
+    #--- Template download
 
     it 'should download the default template repository' do
       @command = create_command('cocoapods-banana')
