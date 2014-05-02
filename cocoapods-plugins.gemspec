@@ -6,7 +6,7 @@ require 'cocoapods_plugins.rb'
 Gem::Specification.new do |spec|
   spec.name          = 'cocoapods-plugins'
   spec.version       = CocoapodsPlugins::VERSION
-  spec.authors       = ['David Grandinetti']
+  spec.authors       = ['David Grandinetti', 'Olivier Halligon']
   spec.summary       = %q{CocoaPods plugin which shows info about available CocoaPods plugins.}
   spec.description   = <<-DESC
                          This CocoaPods plugin shows information about all available CocoaPods plugins
