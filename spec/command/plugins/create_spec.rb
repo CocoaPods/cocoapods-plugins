@@ -3,7 +3,6 @@ require File.expand_path('../../../spec_helper', __FILE__)
 # The CocoaPods namespace
 #
 module Pod
-
   describe Command::Plugins::Create do
     extend SpecHelper::PluginsCreateCommand
 
@@ -12,7 +11,8 @@ module Pod
     end
 
     it 'registers itself' do
-      Command.parse(%w(plugins create)).should.be.instance_of Command::Plugins::Create
+      Command.parse(%w(plugins create))
+      .should.be.instance_of Command::Plugins::Create
     end
 
     #--- Validation
@@ -49,7 +49,9 @@ module Pod
     it 'should download the default template repository' do
       @command = create_command('cocoapods-banana')
 
-      git_command = "clone 'https://github.com/CocoaPods/cocoapods-plugin-template.git' cocoapods-banana"
+      template_repo = 'https://github.com/CocoaPods/' \
+        'cocoapods-plugin-template.git'
+      git_command = "clone '#{template_repo}' cocoapods-banana"
       @command.expects(:git!).with(git_command)
       @command.expects(:configure_template)
       @command.run
@@ -57,15 +59,14 @@ module Pod
     end
 
     it 'should download the passed in template repository' do
-      alt_repository = 'https://github.com/CocoaPods/cocoapods-banana-plugin-template.git'
-      @command = create_command('cocoapods-banana', alt_repository)
+      alt_repo = 'https://github.com/CocoaPods/' \
+        'cocoapods-banana-plugin-template.git'
+      @command = create_command('cocoapods-banana', alt_repo)
 
-      @command.expects(:git!).with("clone '#{alt_repository}' cocoapods-banana")
+      @command.expects(:git!).with("clone '#{alt_repo}' cocoapods-banana")
       @command.expects(:configure_template)
       @command.run
       UI.output.should.include('Creating `cocoapods-banana` plugin')
     end
-
   end
-
 end

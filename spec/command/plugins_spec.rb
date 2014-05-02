@@ -3,9 +3,7 @@ require File.expand_path('../../spec_helper', __FILE__)
 # The CocoaPods namespace
 #
 module Pod
-
   describe Command::Plugins do
-
     before do
       argv = CLAide::ARGV.new([])
       @command = Command::Plugins.new(argv)
@@ -18,7 +16,5 @@ module Pod
     it 'exists' do
       @command.should.not.be.nil?
     end
-
   end
-
 end

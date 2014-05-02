@@ -1,17 +1,19 @@
 module Pod
   class Command
     class Plugins
-
       # The create subcommand. Used to create a new plugin using either the
       # default template (CocoaPods/cocoapods-plugin-template) or a custom
       # template
       #
       class Create < Plugins
-
         self.summary = 'Creates a new plugin'
         self.description = <<-DESC
-                Creates a scaffold for the development of a new plugin according to the CocoaPods best practices.
-                If a `TEMPLATE_URL`, pointing to a git repo containing a compatible template, is specified, it will be used in place of the default one.
+                Creates a scaffold for the development of a new plugin
+                according to the CocoaPods best practices.
+
+                If a `TEMPLATE_URL`, pointing to a git repo containing a
+                compatible template, is specified, it will be used
+                in place of the default one.
         DESC
 
         self.arguments = 'NAME [TEMPLATE_URL]'
@@ -24,8 +26,12 @@ module Pod
 
         def validate!
           super
-          help! 'A name for the plugin is required.' if @name.nil? || @name.empty?
-          help! 'The plugin name cannot contain spaces.' if @name.match(/\s/)
+          if @name.nil? || @name.empty?
+            help! 'A name for the plugin is required.'
+          end
+          if @name.match(/\s/)
+            help! 'The plugin name cannot contain spaces.'
+          end
         end
 
         def run
@@ -43,8 +49,9 @@ module Pod
         executable :git
         executable :ruby
 
-        TEMPLATE_REPO = 'https://github.com/CocoaPods/cocoapods-plugin-template.git'
-        TEMPLATE_INFO_URL = 'https://github.com/CocoaPods/cocoapods-plugin-template'
+        TEMPLATE_BASE_URL = 'https://github.com/CocoaPods/'
+        TEMPLATE_REPO = TEMPLATE_BASE_URL + 'cocoapods-plugin-template.git'
+        TEMPLATE_INFO_URL = TEMPLATE_BASE_URL + 'cocoapods-plugin-template'
 
         # Clones the template from the remote in the working directory using
         # the name of the plugin.
@@ -81,7 +88,6 @@ module Pod
           @template_url || TEMPLATE_REPO
         end
       end
-
     end
   end
 end

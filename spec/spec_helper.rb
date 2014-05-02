@@ -38,7 +38,6 @@ require 'cocoapods_plugin'
 # The CocoaPods namespace
 #
 module Pod
-
   # Disable the wrapping so the output is deterministic in the tests.
   #
   UI.disable_wrap = true
@@ -88,31 +87,27 @@ end
 # SpecHelper namespace
 #
 module SpecHelper
-
-  # Add this as an extension into the Search and List specs to help stub the plugins.json request
+  # Add this as an extension into the Search and List specs
+  # to help stub the plugins.json request
   module PluginsStubs
     def stub_plugins_json_request(json = nil, status = 200)
       body = json || File.read(fixture('plugins.json'))
-      stub_request(:get, Pod::Command::PluginsHelper::PLUGINS_URL).to_return(:status => status, :body => body, :headers => {})
+      stub_request(:get, Pod::Command::PluginsHelper::PLUGINS_URL)
+      .to_return(:status => status, :body => body, :headers => {})
     end
-
   end
 
   # Add this as an extension into the Create specs
   module PluginsCreateCommand
-
     def create_command(*args)
       Pod::Command::Plugins::Create.new CLAide::ARGV.new(args)
     end
-
   end
 
   # Add this as an extension into the Search specs
   module PluginsSearchCommand
-
     def search_command(*args)
       Pod::Command::Plugins::Search.new CLAide::ARGV.new(args)
     end
-
   end
 end

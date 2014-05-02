@@ -1,12 +1,12 @@
 module Pod
   class Command
-
-    # This module is used by Command::Plugins::List and Command::Plugins::Search
-    # to download and parse the JSON describing the plugins list and manipulate it
+    # This module is used by Command::Plugins::List
+    # and Command::Plugins::Search to download and parse
+    # the JSON describing the plugins list and manipulate it
     #
     module PluginsHelper
-
-      PLUGINS_URL = 'https://raw.githubusercontent.com/CocoaPods/cocoapods.org/master/data/plugins.json'
+      PLUGINS_URL = 'https://raw.githubusercontent.com/CocoaPods/' \
+        'cocoapods.org/master/data/plugins.json'
 
       # Force-download the JSON
       #
@@ -16,17 +16,15 @@ module Pod
         UI.puts 'Downloading Plugins list...'
         response = REST.get(PLUGINS_URL)
         if response.ok?
-          begin
-            JSON.parse(response.body)
-          rescue JSON::ParserError => e
-            raise Informative, "Invalid plugins list from cocoapods.org: #{e}"
-          end
+          parse_json(response.body)
         else
-          raise Informative, "Could not download plugins list from cocoapods.org: #{response.inspect}"
+          raise Informative, 'Could not download plugins list ' \
+            "from cocoapods.org: #{response.inspect}"
         end
       end
 
-      # The list of all known plugins, according to the JSON hosted on github's cocoapods.org
+      # The list of all known plugins, according to
+      # the JSON hosted on github's cocoapods.org
       #
       # @return [Array] all known plugins, as listed in the downloaded JSON
       #
@@ -77,21 +75,52 @@ module Pod
       # Display information about a plugin
       #
       # @param [Hash] plugin
-      #        The hash describing the plugin's name, description, gem, url and author
+      #        The hash describing the plugin
       #
       # @param [Bool] verbose
-      #        If true, will also print the author of the plugins. Defaults to false.
+      #        If true, will also print the author of the plugins.
+      #        Defaults to false.
       #
       def self.print_plugin(plugin, verbose = false)
-        plugin_name = "-> #{plugin['name']}"
-        installed = gem_installed?(plugin['gem'])
-        plugin_colored_name = installed ? plugin_name.green : plugin_name.yellow
+        plugin_colored_name = plugin_title(plugin)
 
         UI.title(plugin_colored_name, '', 1) do
           UI.puts_indented plugin['description']
           UI.labeled('Gem', plugin['gem'])
           UI.labeled('URL',   plugin['url'])
           UI.labeled('Author', plugin['author']) if verbose
+        end
+      end
+
+      #----------------#
+
+      private
+
+      # Parse the given JSON data, handling parsing errors if any
+      #
+      # @param [String] json_str
+      #        The string representation of the JSON to parse
+      #
+      def self.parse_json(json_str)
+        JSON.parse(json_str)
+      rescue JSON::ParserError => e
+        raise Informative, "Invalid plugins list from cocoapods.org: #{e}"
+      end
+
+      # Format the title line to print the plugin info with print_plugin
+      # coloring it according to whether the plugin is installed or not
+      #
+      # @param [Hash] plugin
+      #               The hash describing the plugin
+      #
+      # @return [String] The formatted and colored title
+      #
+      def self.plugin_title(plugin)
+        plugin_name = "-> #{plugin['name']}"
+        if gem_installed?(plugin['gem'])
+          plugin_name.green
+        else
+          plugin_name.yellow
         end
       end
     end
