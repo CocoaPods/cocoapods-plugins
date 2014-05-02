@@ -3,7 +3,6 @@ require File.expand_path('../../../spec_helper', __FILE__)
 # The CocoaPods namespace
 #
 module Pod
-
   describe Command::Plugins::List do
     extend SpecHelper::PluginsStubs
 
@@ -13,7 +12,8 @@ module Pod
     end
 
     it 'registers itself' do
-      Command.parse(%w(plugins list)).should.be.instance_of Command::Plugins::List
+      Command.parse(%w(plugins list))
+      .should.be.instance_of Command::Plugins::List
     end
 
     #--- Output printing
@@ -25,7 +25,5 @@ module Pod
       UI.output.should.include('github.com/CocoaPods/cocoapods-fake-2')
       UI.output.should.include('github.com/chneukirchen/bacon')
     end
-
   end
-
 end

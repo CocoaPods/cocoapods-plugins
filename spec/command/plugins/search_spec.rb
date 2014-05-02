@@ -3,7 +3,6 @@ require File.expand_path('../../../spec_helper', __FILE__)
 # The CocoaPods namespace
 #
 module Pod
-
   describe Command::Plugins::Search do
     extend SpecHelper::PluginsStubs
     extend SpecHelper::PluginsSearchCommand
@@ -13,7 +12,8 @@ module Pod
     end
 
     it 'registers itself' do
-      Command.parse(%w(plugins search)).should.be.instance_of Command::Plugins::Search
+      Command.parse(%w(plugins search))
+      .should.be.instance_of Command::Plugins::Search
     end
 
     #--- Validation
@@ -38,7 +38,7 @@ module Pod
 
     #--- Output printing
 
-    it 'should filter plugins by name when full search is not enabled' do
+    it 'should filter plugins only by name without full search' do
       stub_plugins_json_request
       @command = search_command('search')
       @command.run
@@ -47,7 +47,7 @@ module Pod
       UI.output.should.not.include('-> Bacon')
     end
 
-    it 'should filter plugins by name and description when full search is enabled' do
+    it 'should filter plugins by name, author, description with full search' do
       stub_plugins_json_request
       @command = search_command('--full', 'search')
       @command.run
@@ -55,7 +55,5 @@ module Pod
       UI.output.should.include('-> CocoaPods Searchable Fake Gem')
       UI.output.should.not.include('-> Bacon')
     end
-
   end
-
 end

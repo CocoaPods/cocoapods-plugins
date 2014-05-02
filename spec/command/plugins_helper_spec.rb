@@ -3,7 +3,6 @@ require File.expand_path('../spec_helper', File.dirname(__FILE__))
 # The CocoaPods namespace
 #
 module Pod
-
   describe Command::PluginsHelper do
     extend SpecHelper::PluginsStubs
 
@@ -29,14 +28,15 @@ module Pod
       # rubocop:disable Lambda
       lambda { Command::PluginsHelper.download_json }
       .should.raise(Pod::Informative)
-      .message.should.match(/Could not download plugins list from cocoapods.org/)
+      .message.should
+      .match(/Could not download plugins list from cocoapods.org/)
       # rubocop:enable Lambda
     end
 
     it 'detects if a gem is installed' do
-      Command::PluginsHelper.gem_installed?('bacon').should.be.true
-      Command::PluginsHelper.gem_installed?('fake-fake-fake-gem').should.be.false
+      Helper = Command::PluginsHelper
+      Helper.gem_installed?('bacon').should.be.true
+      Helper.gem_installed?('fake-fake-fake-gem').should.be.false
     end
-
   end
 end

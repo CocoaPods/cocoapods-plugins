@@ -3,23 +3,24 @@ require 'pod/command/plugins_helper'
 module Pod
   class Command
     class Plugins
-
-      # The search subcommand. Used to search a plugin in the list of known plugins,
+      # The search subcommand.
+      # Used to search a plugin in the list of known plugins,
       # searching into the name, author description fields
       #
       class Search < Plugins
-
         self.summary = 'Search for known plugins'
         self.description = <<-DESC
-                Searches plugins whose name contains the given text (ignoring case).
-                With --full, it searches by name but also by author and description.
+                Searches plugins whose name contains the given text
+                (ignoring case).
+
+                With --full, it also searches by author and description.
         DESC
 
         self.arguments = 'QUERY'
 
         def self.options
           [
-            ['--full',  'Search by name, author, and description'],
+            ['--full',  'Search by name, author, and description']
           ].concat(super.reject { |option, _| option == '--silent' })
         end
 
@@ -43,11 +44,11 @@ module Pod
           plugins = PluginsHelper.matching_plugins(@query, @full_text_search)
 
           UI.title "Available CocoaPods Plugins matching '#{@query}':"
-          plugins.each { |plugin| PluginsHelper.print_plugin plugin, self.verbose? }
+          plugins.each do |plugin|
+            PluginsHelper.print_plugin plugin, self.verbose?
+          end
         end
-
       end
-
     end
   end
 end
