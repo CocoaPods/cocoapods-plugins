@@ -6,7 +6,7 @@ module Pod
     #
     module PluginsHelper
       PLUGINS_URL = 'https://raw.githubusercontent.com/CocoaPods/' \
-                    'cocoapods.org/master/data/plugins.json'
+        'cocoapods.org/master/data/plugins.json'
 
       # Force-download the JSON
       #
@@ -19,7 +19,7 @@ module Pod
           parse_json(response.body)
         else
           raise Informative, 'Could not download plugins list ' \
-                             "from cocoapods.org: #{response.inspect}"
+            "from cocoapods.org: #{response.inspect}"
         end
       end
 
@@ -103,8 +103,8 @@ module Pod
       #
       def self.parse_json(json_str)
         JSON.parse(json_str)
-        rescue JSON::ParserError => e
-          raise Informative, "Invalid plugins list from cocoapods.org: #{e}"
+      rescue JSON::ParserError => e
+        raise Informative, "Invalid plugins list from cocoapods.org: #{e}"
       end
 
       # Format the title line to print the plugin info with print_plugin

@@ -50,7 +50,7 @@ module Pod
       @command = create_command('cocoapods-banana')
 
       template_repo = 'https://github.com/CocoaPods/' \
-                      'cocoapods-plugin-template.git'
+        'cocoapods-plugin-template.git'
       git_command = "clone '#{template_repo}' cocoapods-banana"
       @command.expects(:git!).with(git_command)
       @command.expects(:configure_template)
@@ -60,7 +60,7 @@ module Pod
 
     it 'should download the passed in template repository' do
       alt_repo = 'https://github.com/CocoaPods/' \
-                 'cocoapods-banana-plugin-template.git'
+        'cocoapods-banana-plugin-template.git'
       @command = create_command('cocoapods-banana', alt_repo)
 
       @command.expects(:git!).with("clone '#{alt_repo}' cocoapods-banana")
