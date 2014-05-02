@@ -1,51 +1,69 @@
-HashSyntax:
-  EnforcedStyle: hash_rockets
+AllCops:
+  Include:
+    - Rakefile
+  Exclude:
+    - lib/cocoapods-core/vendor/**
+    - spec/fixtures/**
 
-StringLiterals:
-  Enabled: false
-  EnforcedStyle: double_quotes
+inherit_from: rubocop-todo.yml
 
+#- CocoaPods -----------------------------------------------------------------#
+
+# We adopted raise instead of fail.
 SignalException:
   EnforcedStyle: only_raise
 
-ConstantName:
+# They are idiomatic
+AssignmentInCondition:
   Enabled: false
 
-IfUnlessModifier:
-  Enabled: false
-
-EmptyLinesAroundBody:
-  Enabled: false
-
+# Allow backticks
 AsciiComments:
   Enabled: false
 
-Proc:
+# Indentation clarifies logic branches in implementations
+IfUnlessModifier:
   Enabled: false
 
-BracesAroundHashParameters:
+# No enforced convention here.
+SingleLineBlockParams:
   Enabled: false
 
+# We only add the comment when needed.
 Encoding:
   Enabled: false
 
-TrailingComma:
-  EnforcedStyleForMultiline: comma
+#- CocoaPods support for Ruby 1.8.7 ------------------------------------------#
+
+HashSyntax:
+  EnforcedStyle: hash_rockets
+
+Lambda:
+  Enabled: false
+
+
+#- CocoaPods specs -----------------------------------------------------------#
+
+# Allow for `should.match /regexp/`.
+AmbiguousRegexpLiteral:
+  Exclude:
+    - spec/**
+
+# Allow `object.should == object` syntax.
+Void:
+  Exclude:
+    - spec/**
+
+ClassAndModuleChildren:
+  Exclude:
+    - spec/**
+
+#- Core -----------------------------------------------------------------------
 
 FileName:
-  Enabled: false
+  Exclude:
+    - lib/cocoapods-core.rb
 
-#------------------------------------------------------------------------------
-# Needs fixing
-#------------------------------------------------------------------------------
-
-ClassLength:
-  Max: 200
-
-MethodLength:
-  Max: 18
-
-LineLength:
-  Enabled: false
-
-
+UselessComparison:
+  Exclude:
+    - spec/**
