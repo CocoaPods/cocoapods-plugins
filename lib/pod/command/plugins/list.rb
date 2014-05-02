@@ -1,4 +1,4 @@
-require 'pod/plugins_helper'
+require 'pod/command/plugins_helper'
 
 module Pod
   class Command
