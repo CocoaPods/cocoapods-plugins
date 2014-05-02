@@ -1,5 +1,4 @@
-inherit_from: .rubocop-cocoapods.yml
+inherit_from:
+ - .rubocop-cocoapods.yml
 
-# Add here rubocop rules specific to your CocoaPods repo
-# Like specific exclusions of /**/vendor/ files for example
 

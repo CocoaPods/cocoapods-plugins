@@ -2,7 +2,7 @@ AllCops:
   Include:
     - Rakefile
   Exclude:
-    - spec/fixtures/*
+    - spec/fixtures/**
 
 #- CocoaPods -----------------------------------------------------------------#
 
@@ -54,3 +54,8 @@ Void:
 ClassAndModuleChildren:
   Exclude:
     - spec/**
+
+UselessComparison:
+  Exclude:
+    - spec/**
+
