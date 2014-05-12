@@ -64,7 +64,8 @@ module Pod
         # @return [void]
         #
         def clone_template
-          UI.section("Creating `#{@name}` plugin") do
+          UI.section("-> Creating `#{@name}` plugin") do
+            UI.notice "using template '#{template_repo_url}'"
             git! "clone '#{template_repo_url}' #{@name}"
           end
         end
@@ -74,7 +75,7 @@ module Pod
         # @return [void]
         #
         def configure_template
-          UI.section('Configuring template') do
+          UI.section('-> Configuring template') do
             Dir.chdir(@name) do
               if File.file? 'configure'
                 system "./configure #{@name}"
