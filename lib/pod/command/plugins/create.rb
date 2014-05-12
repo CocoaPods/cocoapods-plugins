@@ -23,7 +23,7 @@ module Pod
         def initialize(argv)
           @name = argv.shift_argument
           unless @name.nil? || @name.empty? || @name.index(NAME_PREFIX) == 0
-            @name.prepend(NAME_PREFIX)
+            @name = @name.dup.prepend(NAME_PREFIX)
           end
           @template_url = argv.shift_argument
           super
