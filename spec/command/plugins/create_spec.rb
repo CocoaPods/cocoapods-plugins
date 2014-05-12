@@ -44,6 +44,20 @@ module Pod
       # rubocop:enable Lambda
     end
 
+    #--- Naming
+
+    it 'should prefix the given name if not already' do
+      @command = create_command('unprefixed')
+      @command.run
+      UI.output.should.include('Creating `cocoapods-unprefixed` plugin')
+    end
+
+    it 'should not prefix the name if already prefixed' do
+      @command = create_command('cocoapods-prefixed')
+      @command.run
+      UI.output.should.include('Creating `cocoapods-prefixed` plugin')
+    end
+
     #--- Template download
 
     it 'should download the default template repository' do
