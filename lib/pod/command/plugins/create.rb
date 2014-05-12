@@ -6,6 +6,8 @@ module Pod
       # template
       #
       class Create < Plugins
+        NAME_PREFIX = 'cocoapods-'
+
         self.summary = 'Creates a new plugin'
         self.description = <<-DESC
                 Creates a scaffold for the development of a new plugin
@@ -20,6 +22,9 @@ module Pod
 
         def initialize(argv)
           @name = argv.shift_argument
+          unless @name.nil? || @name.empty? || @name.index(NAME_PREFIX) == 0
+            @name.prepend(NAME_PREFIX)
+          end
           @template_url = argv.shift_argument
           super
         end
