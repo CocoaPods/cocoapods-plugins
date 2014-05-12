@@ -86,9 +86,10 @@ module Pod
 
         UI.title(plugin_colored_name, '', 1) do
           UI.puts_indented plugin['description']
-          UI.labeled('Gem', plugin['gem'])
-          UI.labeled('URL',   plugin['url'])
-          UI.labeled('Author', plugin['author']) if verbose
+          ljust = verbose ? 14 : 11
+          UI.labeled('Gem', plugin['gem'], ljust)
+          UI.labeled('URL',   plugin['url'], ljust)
+          UI.labeled('Author', plugin['author'], ljust) if verbose
         end
       end
 
