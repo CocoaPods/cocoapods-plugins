@@ -16,7 +16,9 @@ module Pod
                 With --full, it also searches by author and description.
         DESC
 
-        self.arguments = 'QUERY'
+        self.arguments = [
+            ['QUERY', :required]
+        ]
 
         def self.options
           [

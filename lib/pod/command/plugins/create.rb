@@ -18,7 +18,10 @@ module Pod
                 in place of the default one.
         DESC
 
-        self.arguments = 'NAME [TEMPLATE_URL]'
+        self.arguments = [
+            ['NAME', :required],
+            ['TEMPLATE_URL', :optional]
+        ]
 
         def initialize(argv)
           @name = argv.shift_argument
