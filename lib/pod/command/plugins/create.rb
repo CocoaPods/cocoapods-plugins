@@ -19,8 +19,8 @@ module Pod
         DESC
 
         self.arguments = [
-            ['NAME', :required],
-            ['TEMPLATE_URL', :optional]
+          ['NAME', :required],
+          ['TEMPLATE_URL', :optional]
         ]
 
         def initialize(argv)

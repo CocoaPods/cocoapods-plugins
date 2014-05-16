@@ -1,4 +1,5 @@
 require File.expand_path('../../../spec_helper', __FILE__)
+require 'tmpdir'
 
 # The CocoaPods namespace
 #
@@ -48,13 +49,21 @@ module Pod
 
     it 'should prefix the given name if not already' do
       @command = create_command('unprefixed')
-      @command.run
+      Dir.mktmpdir do |tmpdir|
+        Dir.chdir(tmpdir) do
+          @command.run
+        end
+      end
       UI.output.should.include('Creating `cocoapods-unprefixed` plugin')
     end
 
     it 'should not prefix the name if already prefixed' do
       @command = create_command('cocoapods-prefixed')
-      @command.run
+      Dir.mktmpdir do |tmpdir|
+        Dir.chdir(tmpdir) do
+          @command.run
+        end
+      end
       UI.output.should.include('Creating `cocoapods-prefixed` plugin')
     end
 

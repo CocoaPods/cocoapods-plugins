@@ -17,7 +17,7 @@ module Pod
         DESC
 
         self.arguments = [
-            ['QUERY', :required]
+          ['QUERY', :required]
         ]
 
         def self.options
