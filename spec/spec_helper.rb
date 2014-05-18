@@ -56,7 +56,7 @@ module Pod
         @output << "#{message}\n"
       end
 
-      def warn(message = '', actions = [])
+      def warn(message = '', _actions = [])
         @warnings << "#{message}\n"
       end
 

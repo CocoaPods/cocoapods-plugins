@@ -44,18 +44,18 @@ Lambda:
 # Allow for `should.match /regexp/`.
 AmbiguousRegexpLiteral:
   Exclude:
-    - spec/**
+    - spec/**/*
 
 # Allow `object.should == object` syntax.
 Void:
   Exclude:
-    - spec/**
+    - spec/**/*
 
 ClassAndModuleChildren:
   Exclude:
-    - spec/**
+    - spec/**/*
 
 UselessComparison:
   Exclude:
-    - spec/**
+    - spec/**/*
 

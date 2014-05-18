@@ -20,20 +20,16 @@ module Pod
 
     it 'should require a non-empty query' do
       @command = search_command
-      # rubocop:disable Lambda
-      lambda { @command.validate! }
-      .should.raise(CLAide::Help)
-      .message.should.match(/A search query is required./)
-      # rubocop:enable Lambda
+      should.raise(CLAide::Help) do
+        @command.validate!
+      end.message.should.match(/A search query is required./)
     end
 
     it 'should require a valid RegExp as query' do
       @command = search_command('[invalid')
-      # rubocop:disable Lambda
-      lambda { @command.validate! }
-      .should.raise(CLAide::Help)
-      .message.should.match(/A valid regular expression is required./)
-      # rubocop:enable Lambda
+      should.raise(CLAide::Help) do
+        @command.validate!
+      end.message.should.match(/A valid regular expression is required./)
     end
 
     #--- Output printing

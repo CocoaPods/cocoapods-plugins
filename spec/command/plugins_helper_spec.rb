@@ -16,21 +16,18 @@ module Pod
 
     it 'handles empty/bad JSON' do
       stub_plugins_json_request 'This is not JSON'
-      # rubocop:disable Lambda
-      lambda { Command::PluginsHelper.download_json }
-      .should.raise(Pod::Informative)
-      .message.should.match(/Invalid plugins list from cocoapods.org/)
-      # rubocop:enable Lambda
+      expected_error = /Invalid plugins list from cocoapods.org/
+      should.raise(Pod::Informative) do
+        Command::PluginsHelper.download_json
+      end.message.should.match(expected_error)
     end
 
     it 'notifies the user if the download fails' do
       stub_plugins_json_request '', [404, 'Not Found']
-      # rubocop:disable Lambda
-      lambda { Command::PluginsHelper.download_json }
-      .should.raise(Pod::Informative)
-      .message.should
-      .match(/Could not download plugins list from cocoapods.org/)
-      # rubocop:enable Lambda
+      expected_error = /Could not download plugins list from cocoapods.org/
+      should.raise(Pod::Informative) do
+        Command::PluginsHelper.download_json
+      end.message.should.match(expected_error)
     end
 
     it 'detects if a gem is installed' do

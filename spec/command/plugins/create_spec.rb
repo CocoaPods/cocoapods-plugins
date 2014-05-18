@@ -20,29 +20,23 @@ module Pod
 
     it 'should require a name is passed in' do
       @command = create_command
-      # rubocop:disable Lambda
-      lambda { @command.validate! }
-      .should.raise(CLAide::Help)
-      .message.should.match(/A name for the plugin is required./)
-      # rubocop:enable Lambda
+      should.raise(CLAide::Help) do
+        @command.validate!
+      end.message.should.match(/A name for the plugin is required./)
     end
 
     it 'should require a non-empty name is passed in' do
       @command = create_command('')
-      # rubocop:disable Lambda
-      lambda { @command.validate! }
-      .should.raise(CLAide::Help)
-      .message.should.match(/A name for the plugin is required./)
-      # rubocop:enable Lambda
+      should.raise(CLAide::Help) do
+        @command.validate!
+      end.message.should.match(/A name for the plugin is required./)
     end
 
     it 'should require the name does not have spaces' do
       @command = create_command('my gem')
-      # rubocop:disable Lambda
-      lambda { @command.validate! }
-      .should.raise(CLAide::Help)
-      .message.should.match(/The plugin name cannot contain spaces./)
-      # rubocop:enable Lambda
+      should.raise(CLAide::Help) do
+        @command.validate!
+      end.message.should.match(/The plugin name cannot contain spaces./)
     end
 
     #--- Naming
