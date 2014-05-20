@@ -1,5 +1,16 @@
 # Cocoapods::Plugins Changelog
 
+## 0.2.0
+
+* Migrating to new syntax of CLAide::Command#arguments (fix #23)
+  [Olivier Halligon](https://github.com/AliSoftware)
+
+* Printing URL of template used (fixes #21)  [Olivier Halligon]
+  [Olivier Halligon](https://github.com/AliSoftware)
+
+* `create` subcommand now prefixes the given name if not already (fix #20)
+  [Olivier Halligon](https://github.com/AliSoftware)
+
 ## 0.1.1
 
 * Making `pod plugins` an abstract command, with `list` the default subcommand (#11, #12)

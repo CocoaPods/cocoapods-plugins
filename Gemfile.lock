@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cocoapods-plugins (0.1.1)
+    cocoapods-plugins (0.2.0)
       nap
 
 GEM
