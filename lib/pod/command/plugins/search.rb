@@ -10,14 +10,14 @@ module Pod
       class Search < Plugins
         self.summary = 'Search for known plugins'
         self.description = <<-DESC
-                Searches plugins whose name contains the given text
-                (ignoring case).
+                Searches plugins whose 'name' contains the given `QUERY`.
+                `QUERY` is a regular expression, ignoring case.
 
-                With --full, it also searches by author and description.
+                With `--full`, it also searches by 'author' and 'description'.
         DESC
 
         self.arguments = [
-          ['QUERY', :required]
+            CLAide::Argument.new('QUERY', true)
         ]
 
         def self.options

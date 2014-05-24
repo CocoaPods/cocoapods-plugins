@@ -11,7 +11,7 @@ module Pod
         self.summary = 'Creates a new plugin'
         self.description = <<-DESC
                 Creates a scaffold for the development of a new plugin
-                according to the CocoaPods best practices.
+                named `NAME` according to the CocoaPods best practices.
 
                 If a `TEMPLATE_URL`, pointing to a git repo containing a
                 compatible template, is specified, it will be used
@@ -19,8 +19,8 @@ module Pod
         DESC
 
         self.arguments = [
-          ['NAME', :required],
-          ['TEMPLATE_URL', :optional]
+          CLAide::Argument.new('NAME', true),
+          CLAide::Argument.new('TEMPLATE_URL', false)
         ]
 
         def initialize(argv)
