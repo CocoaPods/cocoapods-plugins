@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gemspec
 
 group :development do
-  gem 'cocoapods'
+  gem 'cocoapods',    :git => "https://github.com/CocoaPods/CocoaPods.git", :branch => 'master'
+  gem 'claide',       :git => "https://github.com/CocoaPods/CLAide.git", :branch => 'master'
   gem 'bacon'
   gem 'coveralls', :require => false
   gem 'mocha-on-bacon'

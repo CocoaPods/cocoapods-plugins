@@ -37,9 +37,8 @@ module Pod
           if @name.nil? || @name.empty?
             help! 'A name for the plugin is required.'
           end
-          if @name.match(/\s/)
-            help! 'The plugin name cannot contain spaces.'
-          end
+
+          help! 'The plugin name cannot contain spaces.' if @name.match(/\s/)
         end
 
         def run
