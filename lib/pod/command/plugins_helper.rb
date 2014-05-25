@@ -6,7 +6,7 @@ module Pod
     #
     module PluginsHelper
       PLUGINS_URL = 'https://raw.githubusercontent.com/CocoaPods/' \
-        'cocoapods.org/master/data/plugins.json'
+        'cocoapods.org/master/plugins.json'
 
       # Force-download the JSON
       #
