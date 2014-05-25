@@ -1,3 +1,5 @@
+require 'pod/command/plugins_helper'
+
 module Pod
   class Command
     class Plugins
@@ -44,6 +46,7 @@ module Pod
         def run
           clone_template
           configure_template
+          show_reminder
         end
 
         #----------------------------------------#
@@ -94,6 +97,15 @@ module Pod
         #
         def template_repo_url
           @template_url || TEMPLATE_REPO
+        end
+
+        # Shows a reminder to the plugin author to make a Pull Request
+        # in order to update plugins.json once the plugin is released
+        #
+        def show_reminder
+          repo = PluginsHelper::PLUGINS_JSON_REPO
+          UI.notice "Don't forget to create a Pull Request on #{repo}\n" \
+            ' to add your plugin to the plugins.json file once it is released!'
         end
       end
     end

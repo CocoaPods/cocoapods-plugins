@@ -92,7 +92,7 @@ module SpecHelper
   module PluginsStubs
     def stub_plugins_json_request(json = nil, status = 200)
       body = json || File.read(fixture('plugins.json'))
-      stub_request(:get, Pod::Command::PluginsHelper::PLUGINS_URL)
+      stub_request(:get, Pod::Command::PluginsHelper::PLUGINS_RAW_URL)
       .to_return(:status => status, :body => body, :headers => {})
     end
   end

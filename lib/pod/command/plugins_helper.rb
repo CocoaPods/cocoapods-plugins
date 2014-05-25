@@ -5,8 +5,12 @@ module Pod
     # the JSON describing the plugins list and manipulate it
     #
     module PluginsHelper
-      PLUGINS_URL = 'https://raw.githubusercontent.com/CocoaPods/' \
-        'cocoapods.org/master/plugins.json'
+      PLUGINS_JSON_REPO_NAME = 'CocoaPods/cocoapods.org'
+      PLUGINS_JSON_REPO = 'https://github.com/' + PLUGINS_JSON_REPO_NAME
+      PLUGINS_JSON_REL_URL = '/master/plugins.json'
+
+      PLUGINS_RAW_URL = 'https://raw.githubusercontent.com/' \
+        + PLUGINS_JSON_REPO_NAME + PLUGINS_JSON_REL_URL
 
       # Force-download the JSON
       #
@@ -14,7 +18,7 @@ module Pod
       #
       def self.download_json
         UI.puts 'Downloading Plugins list...'
-        response = REST.get(PLUGINS_URL)
+        response = REST.get(PLUGINS_RAW_URL)
         if response.ok?
           parse_json(response.body)
         else
