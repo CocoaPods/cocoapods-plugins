@@ -1,3 +1,5 @@
+require 'pod/command/gem_helper'
+
 module Pod
   class Command
     # This module is used by Command::Plugins::List
@@ -60,22 +62,6 @@ module Pod
         end
       end
 
-      # Tells if a gem is installed
-      #
-      # @param [String] gem_name
-      #        The name of the plugin gem to test
-      #
-      # @return [Bool] true if the gem is installed, false otherwise.
-      #
-      def self.gem_installed?(gem_name)
-        if Gem::Specification.methods.include?(:find_all_by_name)
-          Gem::Specification.find_all_by_name(gem_name).any?
-        else
-          # Fallback to Gem.available? for old versions of rubygems
-          Gem.available?(gem_name)
-        end
-      end
-
       # Display information about a plugin
       #
       # @param [Hash] plugin
@@ -90,16 +76,33 @@ module Pod
 
         UI.title(plugin_colored_name, '', 1) do
           UI.puts_indented plugin['description']
-          ljust = verbose ? 14 : 11
+          ljust = verbose ? 16 : 11
           UI.labeled('Gem', plugin['gem'], ljust)
           UI.labeled('URL',   plugin['url'], ljust)
-          UI.labeled('Author', plugin['author'], ljust) if verbose
+          print_verbose_plugin(plugin, ljust) if verbose
         end
       end
 
       #----------------#
 
       private
+
+      # Smaller helper to print out the verbose details
+      # for a plugin.
+      #
+      # @param [Hash] plugin
+      #        The hash describing the plugin
+      #
+      # @param [Integer] ljust
+      #        The left justification that is passed into UI.labeled
+      #
+      def self.print_verbose_plugin(plugin, ljust)
+        UI.labeled('Author', plugin['author'], ljust)
+        unless GemHelper.cache.specs.empty?
+          versions = GemHelper.versions_string(plugin['gem'])
+          UI.labeled('Versions', versions, ljust)
+        end
+      end
 
       # Parse the given JSON data, handling parsing errors if any
       #
@@ -122,7 +125,8 @@ module Pod
       #
       def self.plugin_title(plugin)
         plugin_name = "-> #{plugin['name']}"
-        if gem_installed?(plugin['gem'])
+        if GemHelper.gem_installed?(plugin['gem'])
+          plugin_name += " (#{GemHelper.installed_version(plugin['gem'])})"
           plugin_name.green
         else
           plugin_name.yellow
