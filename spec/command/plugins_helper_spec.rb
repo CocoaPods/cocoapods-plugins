@@ -30,10 +30,5 @@ module Pod
       end.message.should.match(expected_error)
     end
 
-    it 'detects if a gem is installed' do
-      Helper = Command::PluginsHelper
-      Helper.gem_installed?('bacon').should.be.true
-      Helper.gem_installed?('fake-fake-fake-gem').should.be.false
-    end
   end
 end

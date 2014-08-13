@@ -1,4 +1,5 @@
 require 'pod/command/plugins_helper'
+require 'pod/command/gem_helper'
 
 module Pod
   class Command
@@ -44,6 +45,7 @@ module Pod
 
         def run
           plugins = PluginsHelper.matching_plugins(@query, @full_text_search)
+          GemHelper.download_and_cache_specs if self.verbose?
 
           UI.title "Available CocoaPods Plugins matching '#{@query}':"
           plugins.each do |plugin|
