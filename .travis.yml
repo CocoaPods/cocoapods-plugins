@@ -18,11 +18,7 @@ before_install:
   - rvm use $RVM_RUBY_VERSION
   - if [[ $RVM_RUBY_VERSION == 'system' ]]; then sudo gem install bundler --no-ri --no-rdoc; else gem install bundler --no-ri --no-rdoc; fi
 
-
 install:
   - sudo bundle install --without=documentation
-
-  # CocoaPods/CocoaPods specific
-  - ./bin/pod repo update --silent
 
 script: bundle exec rake spec
