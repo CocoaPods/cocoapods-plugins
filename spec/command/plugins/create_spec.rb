@@ -12,8 +12,8 @@ module Pod
     end
 
     it 'registers itself' do
-      Command.parse(%w(plugins create))
-      .should.be.instance_of Command::Plugins::Create
+      Command.parse(%w(plugins create)).
+        should.be.instance_of Command::Plugins::Create
     end
 
     #--- Validation

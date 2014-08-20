@@ -12,8 +12,8 @@ module Pod
     end
 
     it 'registers itself' do
-      Command.parse(%w(plugins list))
-      .should.be.instance_of Command::Plugins::List
+      Command.parse(%w(plugins list)).
+        should.be.instance_of Command::Plugins::List
     end
 
     #--- Output printing

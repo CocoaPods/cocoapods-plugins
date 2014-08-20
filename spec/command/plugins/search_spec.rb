@@ -12,8 +12,8 @@ module Pod
     end
 
     it 'registers itself' do
-      Command.parse(%w(plugins search))
-      .should.be.instance_of Command::Plugins::Search
+      Command.parse(%w(plugins search)).
+        should.be.instance_of Command::Plugins::Search
     end
 
     #--- Validation
