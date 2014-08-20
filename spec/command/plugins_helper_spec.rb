@@ -10,7 +10,7 @@ module Pod
       stub_plugins_json_request
       json = Command::PluginsHelper.download_json
       json.should.not.be.nil?
-      json.should.be.kind_of? Hash
+      json.should.be.is_a? Hash
       json['plugins'].size.should.eql? 3
     end
 
