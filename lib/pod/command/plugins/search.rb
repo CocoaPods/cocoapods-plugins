@@ -18,12 +18,12 @@ module Pod
         DESC
 
         self.arguments = [
-          CLAide::Argument.new('QUERY', true)
+          CLAide::Argument.new('QUERY', true),
         ]
 
         def self.options
           [
-            ['--full',  'Search by name, author, and description']
+            ['--full',  'Search by name, author, and description'],
           ].concat(super.reject { |option, _| option == '--silent' })
         end
 

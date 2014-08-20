@@ -1,26 +1,28 @@
-# Sets Travis to run the Ruby specs on OS X machines which are required to
-# build the native extensions of Xcodeproj.
+# Sets Travis to run the Ruby specs on OS X machines to be as close as possible
+# to the user environment.
 #
 language: objective-c
+addons:
+ code_climate:
+   repo_token: 501acd9bc61d80ef6119b69ab42c52fa66cefddcc6724a1e93a79c3d3e32bf55  
+
 env:
-  # This is what 10.8.x comes with and we want to support that.
   - RVM_RUBY_VERSION=system
-  - RVM_RUBY_VERSION=2.0.0-p353
+  # - RVM_RUBY_VERSION=1.8.7-p358
 
 before_install:
+  - export LANG=en_US.UTF-8
   - curl http://curl.haxx.se/ca/cacert.pem -o /usr/local/share/cacert.pem
-  - export SSL_CERT_FILE=/usr/local/share/cacert.pem
-  - export PYTHONPATH=/usr/local
-  - export GIT_AUTHOR_NAME=CocoaPods
-  - export GIT_AUTHOR_EMAIL=cocoapods@example.com
   - source ~/.rvm/scripts/rvm
   - if [[ $RVM_RUBY_VERSION != 'system' ]]; then rvm install $RVM_RUBY_VERSION; fi
   - rvm use $RVM_RUBY_VERSION
-  - if [[ $RVM_RUBY_VERSION == 'system' ]]; then export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future; fi
-  - if [[ $RVM_RUBY_VERSION == 'system' ]]; then sudo ln -s /usr/bin/llvm-gcc-4.2 /usr/bin/gcc-4.2; fi
   - if [[ $RVM_RUBY_VERSION == 'system' ]]; then sudo gem install bundler --no-ri --no-rdoc; else gem install bundler --no-ri --no-rdoc; fi
-  
+
+
 install:
-  - bundle install --path ./travis_bundle_dir
-  
+  - sudo bundle install --without=documentation
+
+  # CocoaPods/CocoaPods specific
+  - ./bin/pod repo update --silent
+
 script: bundle exec rake spec

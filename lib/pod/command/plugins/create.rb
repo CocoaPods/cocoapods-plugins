@@ -22,7 +22,7 @@ module Pod
 
         self.arguments = [
           CLAide::Argument.new('NAME', true),
-          CLAide::Argument.new('TEMPLATE_URL', false)
+          CLAide::Argument.new('TEMPLATE_URL', false),
         ]
 
         def initialize(argv)
