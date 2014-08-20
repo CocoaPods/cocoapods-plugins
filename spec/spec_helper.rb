@@ -28,6 +28,16 @@ include WebMock::API
 require 'cocoapods'
 require 'cocoapods_plugin'
 
+# VCR
+#--------------------------------------#
+
+require 'vcr'
+VCR.configure do |c|
+  c.cassette_library_dir = ROOT + 'spec/fixtures/vcr_cassettes'
+  c.hook_into :webmock
+  c.ignore_hosts 'codeclimate.com'
+end
+
 #-----------------------------------------------------------------------------#
 
 # The CocoaPods namespace

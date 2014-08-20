@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: https://github.com/CocoaPods/Core.git
-  revision: b997f050f65b2823bbf3539308206b1b0e630932
+  revision: f557903817f29000819d4b1b754e6dd667587c30
   branch: master
   specs:
     cocoapods-core (0.33.1)
@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/CocoaPods/CocoaPods.git
-  revision: 7e68c6692c521dbfcfa1be07707498f3c351e671
+  revision: 7ddbdcc27d1ccadfbc04d2cf53b8dfe12ff615ce
   branch: master
   specs:
     cocoapods (0.33.1)
@@ -98,6 +98,7 @@ GEM
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
     slop (3.6.0)
+    vcr (2.9.2)
     webmock (1.18.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -121,4 +122,5 @@ DEPENDENCIES
   prettybacon
   rake
   rubocop
+  vcr
   webmock
