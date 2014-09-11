@@ -1,5 +1,13 @@
 # Cocoapods::Plugins Changelog
 
+## Master
+
+* Added a reminder on to add plugin to JSON once released (fix #27)
+  [Olivier Halligon](https://github.com/AliSoftware)
+
+* Print out the version of plugins when invoked with `--verbose`
+  [David Grandinetti](https://github.com/dbgrandi)
+
 ## 0.2.0
 
 * Migrating to new syntax of CLAide::Command#arguments (fix #23)
