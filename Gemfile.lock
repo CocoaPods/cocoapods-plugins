@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/CocoaPods/CocoaPods.git
-  revision: 05b003b85df7ff9793d37f3562df0ac73ba493cd
+  revision: 576b10b9bf72c3aaded4e767bc0f8735a8e1fcca
   branch: master
   specs:
     cocoapods (0.33.1)
@@ -15,7 +15,7 @@ GIT
       claide (~> 0.7.0)
       cocoapods-core (= 0.33.1)
       cocoapods-downloader (~> 0.6.1)
-      cocoapods-plugins (~> 0.2.0)
+      cocoapods-plugins (~> 0.3.0)
       cocoapods-trunk (~> 0.1.4)
       cocoapods-try (~> 0.3.0)
       colored (~> 1.2)
@@ -39,7 +39,7 @@ GIT
 PATH
   remote: .
   specs:
-    cocoapods-plugins (0.2.0)
+    cocoapods-plugins (0.3.0)
       nap
 
 GEM
@@ -57,7 +57,7 @@ GEM
     cocoapods-downloader (0.6.1)
     cocoapods-trunk (0.1.4)
       json_pure (~> 1.8)
-      nap (>= 0.6)
+      nap (>= 0.8)
       netrc
     cocoapods-try (0.3.0)
     codeclimate-test-reporter (0.4.0)

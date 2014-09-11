@@ -1,6 +1,6 @@
 # Cocoapods::Plugins Changelog
 
-## Master
+## 0.3.0
 
 * Added a reminder to add plugin to `plugins.json` once released (fix #27)
   [Olivier Halligon](https://github.com/AliSoftware)
