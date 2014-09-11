@@ -2,7 +2,7 @@
 
 ## Master
 
-* Added a reminder on to add plugin to JSON once released (fix #27)
+* Added a reminder to add plugin to `plugins.json` once released (fix #27)
   [Olivier Halligon](https://github.com/AliSoftware)
 
 * Print out the version of plugins when invoked with `--verbose`
