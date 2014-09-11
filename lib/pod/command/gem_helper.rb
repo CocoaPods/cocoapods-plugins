@@ -79,11 +79,7 @@ module Pod
       #
       def self.versions_string(plugin_name, index_cache = @cache)
         name_tuples = index_cache.specs_with_name(plugin_name)
-
-        sorted_versions = name_tuples.sort_by do |name_tuple|
-          name_tuple.version
-        end
-
+        sorted_versions = name_tuples.sort_by(&:version)
         version_strings = colorize_versions(sorted_versions)
         version_strings.join ', '
       end
