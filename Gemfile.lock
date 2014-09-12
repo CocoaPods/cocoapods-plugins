@@ -1,13 +1,13 @@
 GIT
   remote: https://github.com/CocoaPods/CLAide.git
-  revision: 31e74fae76461e9832e488f77a9e8116703c201b
+  revision: ce2a7890dbfcaecd38347195d5c753cdb893e636
   branch: master
   specs:
     claide (0.7.0)
 
 GIT
   remote: https://github.com/CocoaPods/CocoaPods.git
-  revision: 576b10b9bf72c3aaded4e767bc0f8735a8e1fcca
+  revision: a71dcc4f6a1b30043db66134fa31cda56561e2f6
   branch: master
   specs:
     cocoapods (0.33.1)
@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: https://github.com/CocoaPods/Core.git
-  revision: 2c5be5dbb1157c10e86ff75223a119b74d01ae7f
+  revision: 34e217967230dc9d1905e1a731458fc2f3f7c950
   branch: master
   specs:
     cocoapods-core (0.33.1)
@@ -39,7 +39,7 @@ GIT
 PATH
   remote: .
   specs:
-    cocoapods-plugins (0.3.0)
+    cocoapods-plugins (0.3.1)
       nap
 
 GEM

@@ -1,5 +1,9 @@
 # Cocoapods::Plugins Changelog
 
+## 0.3.1
+
+* Restore compatibility with Ruby 1.8.7.
+
 ## 0.3.0
 
 * Added a reminder to add plugin to `plugins.json` once released (fix #27)
