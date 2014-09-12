@@ -40,14 +40,15 @@ module Pod
       def self.gem_installed?(gem_name, version_string = nil)
         version = Gem::Version.new(version_string) if version_string
 
-        gems = Gem::Specification.find_all_by_name(gem_name)
-        return !gems.empty? unless version
-
-        gems.each do |gem|
-          return true if gem.version == version
+        if Gem::Specification.respond_to?(:find_all_by_name)
+          gems = Gem::Specification.find_all_by_name(gem_name)
+          return !gems.empty? unless version
+          gems.each { |gem| return true if gem.version == version }
+          false
+        else
+          dep = Gem::Dependency.new(gem_name, version_string)
+          !Gem.source_index.search(dep).empty?
         end
-
-        false
       end
 
       # Get the version of a gem that is installed locally. If more than
@@ -58,7 +59,12 @@ module Pod
       #                  or nil if it is not installed.
       #
       def self.installed_version(gem_name)
-        gem = Gem::Specification.find_all_by_name(gem_name).first
+        if Gem::Specification.respond_to?(:find_all_by_name)
+          gem = Gem::Specification.find_all_by_name(gem_name).first
+        else
+          dep = Gem::Dependency.new(gem_name)
+          gem = Gem.source_index.search(dep).first
+        end
         gem ? gem.version.to_s : nil
       end
 

@@ -24,7 +24,7 @@ module Pod
     end
 
     it 'notifies the user when getting the spec index fails' do
-      error = Gem::RemoteFetcher::UnknownHostError.new('no host', 'bad url')
+      error = Gem::RemoteFetcher::FetchError.new('no host', 'bad url')
       wrapper_error = stub(:error => error)
       response = [[], [wrapper_error]]
       Gem::SpecFetcher.any_instance.stubs(:available_specs).returns(response)
