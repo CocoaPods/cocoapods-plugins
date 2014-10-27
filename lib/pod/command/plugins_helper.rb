@@ -7,7 +7,7 @@ module Pod
     # the JSON describing the plugins list and manipulate it
     #
     module PluginsHelper
-      PLUGINS_JSON_REPO_NAME = 'CocoaPods/cocoapods.org'
+      PLUGINS_JSON_REPO_NAME = 'CocoaPods/cocoapods-plugins'
       PLUGINS_JSON_REPO = 'https://github.com/' + PLUGINS_JSON_REPO_NAME
       PLUGINS_JSON_REL_URL = '/master/plugins.json'
 
@@ -25,12 +25,12 @@ module Pod
           parse_json(response.body)
         else
           raise Informative, 'Could not download plugins list ' \
-            "from cocoapods.org: #{response.inspect}"
+            "from cocoapods-plugins: #{response.inspect}"
         end
       end
 
       # The list of all known plugins, according to
-      # the JSON hosted on github's cocoapods.org
+      # the JSON hosted on github's cocoapods-plugins
       #
       # @return [Array] all known plugins, as listed in the downloaded JSON
       #
@@ -112,7 +112,7 @@ module Pod
       def self.parse_json(json_str)
         JSON.parse(json_str)
       rescue JSON::ParserError => e
-        raise Informative, "Invalid plugins list from cocoapods.org: #{e}"
+        raise Informative, "Invalid plugins list from cocoapods-plugins: #{e}"
       end
 
       # Format the title line to print the plugin info with print_plugin
