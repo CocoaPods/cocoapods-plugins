@@ -115,6 +115,21 @@
       "author":"Denys Telezhkin",
       "url":"https://github.com/DenHeadless/cocoapods-sorted-search",
       "description":"Adds a sort subcommand for pod search to sort search results by amount of stars, forks, or github activity."
+    },
+    {
+      "gem":"cocoapods-release",
+      "name":"Release",
+      "author":"Oliver Letterer",
+      "social_media_url":"https://twitter.com/oletterer",
+      "url":"https://github.com/Sparrow-Labs/cocoapods-release",
+      "description":"Tags and releases pods for you."
+    },
+    {
+      "gem":"cocoapods-clean",
+      "name":"cocoapods clean",
+      "author":"Luca Querella",
+      "url":"https://github.com/BendingSpoons/cocoapods-clean",
+      "description":"Remove Podfile.lock, Pods/ and *.xcworkspace."
     }
   ]
 }
