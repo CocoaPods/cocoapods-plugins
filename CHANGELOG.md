@@ -1,5 +1,12 @@
 # Cocoapods::Plugins Changelog
 
+## 0.3.2
+
+* Switch to using cocoapods-plugins JSON file isntead of from Cocoapods.org's repo
+  [#542919](https://github.com/CocoaPods/cocoapods-plugins/commit/542919902e611c33bb0e02848037474529ddd0f9)
+  [Florian Hanke](https://github.com/floere)
+
+
 ## 0.3.1
 
 * Restore compatibility with Ruby 1.8.7.  
