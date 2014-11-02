@@ -10,7 +10,7 @@ module Pod
         self.summary = 'List all known plugins'
         self.description = <<-DESC
                 List all known plugins (according to the list
-                hosted on github.com/CocoaPods/cocoapods.org)
+                hosted on github.com/CocoaPods/cocoapods-plugins)
         DESC
 
         def self.options

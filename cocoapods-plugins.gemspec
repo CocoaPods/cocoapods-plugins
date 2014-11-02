@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
                          This CocoaPods plugin shows information about all available CocoaPods plugins
                          (yes, this is very meta!).
                          This CP plugin adds the "pod plugins" command to CocoaPods so that you can list
-                         all plugins (registered in the reference JSON hosted at CocoaPods/cocoapods.org)
+                         all plugins (registered in the reference JSON hosted at CocoaPods/cocoapods-plugins)
                        DESC
   spec.homepage      = 'https://github.com/cocoapods/cocoapods-plugins'
   spec.license       = 'MIT'

@@ -16,7 +16,7 @@ CocoaPods plugin which shows info about available CocoaPods plugins or helps you
 
     $ pod plugins
 
-List all known plugins (according to the list hosted on github.com/CocoaPods/cocoapods.org)
+List all known plugins (according to the list hosted on github.com/CocoaPods/cocoapods-plugins)
 
 #####Search plugins
 
@@ -33,7 +33,7 @@ If a `TEMPLATE_URL`, pointing to a git repo containing a compatible template, is
 
 ## Get your plugin listed
 
-The list of plugins is in the cocoapods.org repository at [https://github.com/CocoaPods/cocoapods.org/blob/master/plugins.json](https://github.com/CocoaPods/cocoapods.org/blob/master/plugins.json).
+The list of plugins is in the cocoapods-plugins repository at [https://github.com/CocoaPods/cocoapods-plugins/blob/master/plugins.json](https://github.com/CocoaPods/cocoapods-plugins/blob/master/plugins.json).
 
 To have your plugin listed, submit a pull request that adds your plugin details.
 
