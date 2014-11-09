@@ -1,65 +1,65 @@
 GIT
   remote: https://github.com/CocoaPods/CLAide.git
-  revision: ce2a7890dbfcaecd38347195d5c753cdb893e636
+  revision: 00986e2b185c6eca9d30a7d50073f2a819a0f61a
   branch: master
   specs:
     claide (0.7.0)
 
 GIT
   remote: https://github.com/CocoaPods/CocoaPods.git
-  revision: a71dcc4f6a1b30043db66134fa31cda56561e2f6
+  revision: 3253d72c7217dd2733b48960c697381f1361e6f7
   branch: master
   specs:
-    cocoapods (0.33.1)
-      activesupport (>= 3.2.15, < 4)
+    cocoapods (0.35.0.rc2)
+      activesupport (>= 3.2.15)
       claide (~> 0.7.0)
-      cocoapods-core (= 0.33.1)
-      cocoapods-downloader (~> 0.6.1)
-      cocoapods-plugins (~> 0.3.0)
-      cocoapods-trunk (~> 0.1.4)
-      cocoapods-try (~> 0.3.0)
+      cocoapods-core (= 0.35.0.rc2)
+      cocoapods-downloader (~> 0.7.2)
+      cocoapods-plugins (~> 0.3.1)
+      cocoapods-trunk (~> 0.4.0)
+      cocoapods-try (~> 0.4.2)
       colored (~> 1.2)
       escape (~> 0.0.4)
-      json_pure (~> 1.8)
+      molinillo (~> 0.1.1)
       nap (~> 0.8)
       open4 (~> 1.3)
-      xcodeproj (~> 0.18.0)
+      xcodeproj (~> 0.20.1)
 
 GIT
   remote: https://github.com/CocoaPods/Core.git
-  revision: 34e217967230dc9d1905e1a731458fc2f3f7c950
+  revision: a00e38bc4ad61cb4cf23a5accba4ef25e48871a5
   branch: master
   specs:
-    cocoapods-core (0.33.1)
+    cocoapods-core (0.35.0.rc2)
       activesupport (>= 3.2.15)
       fuzzy_match (~> 2.0.4)
-      json_pure (~> 1.8)
       nap (~> 0.8.0)
 
 PATH
   remote: .
   specs:
-    cocoapods-plugins (0.3.1)
+    cocoapods-plugins (0.3.2)
       nap
 
 GEM
   remote: https://rubygems.org/
   specs:
-    CFPropertyList (2.2.8)
-    activesupport (3.2.19)
-      i18n (~> 0.6, >= 0.6.4)
-      multi_json (~> 1.0)
+    activesupport (4.1.7)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
     addressable (2.3.6)
     ast (2.0.0)
     astrolabe (1.3.0)
       parser (>= 2.2.0.pre.3, < 3.0)
     bacon (1.2.0)
-    cocoapods-downloader (0.6.1)
-    cocoapods-trunk (0.1.4)
-      json_pure (~> 1.8)
+    cocoapods-downloader (0.7.2)
+    cocoapods-trunk (0.4.0)
       nap (>= 0.8)
-      netrc
-    cocoapods-try (0.3.0)
+      netrc (= 0.7.8)
+    cocoapods-try (0.4.2)
     codeclimate-test-reporter (0.4.0)
       simplecov (>= 0.7.1, < 1.0.0)
     colored (1.2)
@@ -69,15 +69,17 @@ GEM
     escape (0.0.4)
     fuzzy_match (2.0.4)
     i18n (0.6.11)
-    json_pure (1.8.1)
+    json (1.8.1)
     metaclass (0.0.4)
+    minitest (5.4.2)
     mocha (1.1.0)
       metaclass (~> 0.0.1)
     mocha-on-bacon (0.2.2)
       mocha (>= 0.13.0)
+    molinillo (0.1.1)
     multi_json (1.10.1)
     nap (0.8.0)
-    netrc (0.7.7)
+    netrc (0.7.8)
     open4 (1.3.4)
     parser (2.2.0.pre.4)
       ast (>= 1.1, < 3.0)
@@ -101,13 +103,15 @@ GEM
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
     slop (3.6.0)
+    thread_safe (0.3.4)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
     vcr (2.9.3)
     webmock (1.18.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
-    xcodeproj (0.18.0)
-      CFPropertyList (~> 2.2)
-      activesupport (~> 3.0)
+    xcodeproj (0.20.1)
+      activesupport (>= 3)
       colored (~> 1.2)
 
 PLATFORMS
