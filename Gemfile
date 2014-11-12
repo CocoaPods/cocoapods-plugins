@@ -13,8 +13,6 @@ group :development do
   gem 'vcr'
   gem 'webmock'
 
-  if RUBY_VERSION >= '1.9.3'
-    gem 'codeclimate-test-reporter', :require => nil
-    gem 'rubocop'
-  end
+  gem 'codeclimate-test-reporter', :require => nil
+  gem 'rubocop'
 end

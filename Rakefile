@@ -40,14 +40,10 @@ begin
 
   desc 'Checks code style'
   task :rubocop do
-    if RUBY_VERSION >= '1.9.3'
-      require 'rubocop'
-      cli = RuboCop::CLI.new
-      result = cli.run(FileList['{spec,lib}/**/*.rb'])
-      abort('RuboCop failed!') unless result == 0
-    else
-      puts '[!] Ruby > 1.9 is required to run style checks'
-    end
+    require 'rubocop'
+    cli = RuboCop::CLI.new
+    result = cli.run(FileList['{spec,lib}/**/*.rb'])
+    abort('RuboCop failed!') unless result == 0
   end
 
 rescue LoadError
