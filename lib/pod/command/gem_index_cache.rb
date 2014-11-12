@@ -56,7 +56,7 @@ module Pod
 
         unless errors.empty?
           UI.puts 'Error downloading Rubygem specification index: ' +
-                  errors.first.error.to_s
+            errors.first.error.to_s
           return []
         end
 
