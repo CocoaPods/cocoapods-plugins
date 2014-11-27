@@ -130,6 +130,20 @@
       "author":"Luca Querella",
       "url":"https://github.com/BendingSpoons/cocoapods-clean",
       "description":"Remove Podfile.lock, Pods/ and *.xcworkspace."
+    },
+    {
+      "gem":"cocoapods-keys",
+      "name":"CocoaPods Keys",
+      "author":"Orta Therox, Samuel E. Giddins",
+      "url":"https://github.com/orta/cocoapods-keys",
+      "description":"Store sensitive data in your Mac's keychain, that will be installed into your app's source code via the Pods library."
+    },
+    {
+      "gem":"cocoapods-packager",
+      "name":"CocoaPods Packager",
+      "author":"Kyle Fuller, Boris Bügling",
+      "url":"https://github.com/CocoaPods/cocoapods-packager",
+      "description":"Generate a framework or static library from a podspec."
     }
   ]
 }
