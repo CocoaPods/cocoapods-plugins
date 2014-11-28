@@ -17,10 +17,6 @@ module Pod
                 `.gemspec` file describing the CocoaPods plugin gem.
         DESC
 
-        def self.options
-          super.reject { |option, _| option == '--silent' }
-        end
-
         def initialize(argv)
           @gemspec_files = Dir.glob('*.gemspec')
           super
@@ -39,14 +35,14 @@ module Pod
           gemspec = Gem::Specification.load(@gemspec_files.first)
           unless gemspec.name.start_with?('cocoapods-')
             UI.notice 'Your gem name should start with `cocoapods-` to be ' \
-            + 'loaded as a plugin by CocoaPods'
+              'loaded as a plugin by CocoaPods'
           end
 
           json = json_from_gemspec(gemspec)
 
           title = "[plugins.json] Add #{gemspec.name}"
           body = 'Please add the following entry to the `plugins.json` file:' \
-          + "\n\n```\n#{json}\n```"
+            "\n\n```\n#{json}\n```"
           open_new_issue_url(title, body)
         end
 
@@ -69,7 +65,7 @@ module Pod
 
         def open_new_issue_url(title, body)
           url = 'https://github.com/CocoaPods/cocoapods-plugins/issues/new?' \
-          + "title=#{CGI.escape(title)}&body=#{CGI.escape(body)}"
+            "title=#{CGI.escape(title)}&body=#{CGI.escape(body)}"
           `open "#{url}"`
         end
       end

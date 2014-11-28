@@ -1,6 +1,6 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
-  spec.name          = 'unprefixed-plugins'
+  spec.name          = 'unprefixed-plugin'
   spec.version       = '1.2.3'
   spec.authors       = ['Author 1', 'Author 2']
   spec.summary       = 'Gem Summary'
