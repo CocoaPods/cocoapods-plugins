@@ -113,4 +113,10 @@ module SpecHelper
       Pod::Command::Plugins::Search.new CLAide::ARGV.new(args)
     end
   end
+
+  module PluginsPublishCommand
+    def publish_command
+      Pod::Command::Plugins::Publish.new CLAide::ARGV.new []
+    end
+  end
 end

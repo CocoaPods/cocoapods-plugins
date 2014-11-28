@@ -1,5 +1,10 @@
 # Cocoapods::Plugins Changelog
 
+## Master
+
+* Added the `pod plugins publish` subcommand
+  [Olivier Halligon](https://github.com/AliSoftware)
+
 ## 0.3.2
 
 * Switch to using cocoapods-plugins JSON file instead of from Cocoapods.org's repo.  
