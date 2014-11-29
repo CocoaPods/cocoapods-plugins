@@ -10,7 +10,9 @@ module Pod
       class Publish < Plugins
         self.summary = 'Request to add the plugin to the official plugins list'
         self.description = <<-DESC
-                Opens a new GitHub issue to request adding the CocoaPods plugin
+                This command is only useful for developers of CocoaPods plugins.
+
+                It opens a new GitHub issue to request adding the plugin
                 currently being developped to the list of official plugins.
 
                 The current directory is expected to have one (and only one)
