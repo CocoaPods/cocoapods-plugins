@@ -2,7 +2,7 @@
 
 ## Master
 
-* Added the `pod plugins publish` subcommand
+* Added the `pod plugins publish` subcommand.  
   [Olivier Halligon](https://github.com/AliSoftware)
 
 ## 0.3.2

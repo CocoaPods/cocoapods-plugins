@@ -8,7 +8,6 @@ module Pod
 
     before do
       UI.output = ''
-      @subject = Command::Plugins::Publish
     end
 
     it 'registers itself' do
@@ -83,31 +82,26 @@ module Pod
     end
 
     it 'should compute a nice plugin name' do
-      create_temp_dir('cocoapods-foo1.gemspec') do
-        command = publish_command
-        command.expects(:pretty_name_from_gemname).
-          with('cocoapods-foo1').
-          returns('CocoaPods Foo1')
-        command.stubs(:open_new_issue_url)
-        command.run
-      end
+      publish_command.instance_eval do
+        pretty_name_from_gemname('cocoapods-foo1')
+      end.should.equal('CocoaPods Foo1')
     end
 
     it 'should have the plugin json entry in the issue body' do
       create_temp_dir('cocoapods-foo1.gemspec') do
         command = publish_command
-        json = <<-JSON.gsub(/^.*\|/, '').chomp
-        |Please add the following entry to the `plugins.json` file:
-        |
-        |```
-        |{
-        |  "gem": "cocoapods-foo1",
-        |  "name": "CocoaPods Foo1",
-        |  "author": "Author 1",
-        |  "url": "https://github.com/proper-man/cocoapods-foo1",
-        |  "description": "Gem Summary 1"
-        |}
-        |```
+        json = <<-JSON.chomp
+Please add the following entry to the `plugins.json` file:
+
+```
+{
+  "gem": "cocoapods-foo1",
+  "name": "CocoaPods Foo1",
+  "author": "Author 1",
+  "url": "https://github.com/proper-man/cocoapods-foo1",
+  "description": "Gem Summary 1"
+}
+```
         JSON
         command.expects(:open_new_issue_url).with(anything, json)
         command.run
@@ -117,18 +111,18 @@ module Pod
     it 'should concatenate authors if more than one' do
       create_temp_dir('cocoapods-foo2.gemspec') do
         command = publish_command
-        json = <<-JSON.gsub(/^.*\|/, '').chomp
-        |Please add the following entry to the `plugins.json` file:
-        |
-        |```
-        |{
-        |  "gem": "cocoapods-foo2",
-        |  "name": "CocoaPods Foo2",
-        |  "author": "Author 1, Author 2",
-        |  "url": "https://github.com/proper-man/cocoapods-foo2",
-        |  "description": "Gem Description 2"
-        |}
-        |```
+        json = <<-JSON.chomp
+Please add the following entry to the `plugins.json` file:
+
+```
+{
+  "gem": "cocoapods-foo2",
+  "name": "CocoaPods Foo2",
+  "author": "Author 1, Author 2",
+  "url": "https://github.com/proper-man/cocoapods-foo2",
+  "description": "Gem Description 2"
+}
+```
         JSON
         command.expects(:open_new_issue_url).with(anything, json)
         command.run
