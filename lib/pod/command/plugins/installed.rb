@@ -2,13 +2,14 @@
 module Pod
   class Command
     class Plugins
-      # The list subcommand. Used to list all known plugins
+      # The `installed` subcommand.
+      # Used to list all installed plugins.
       #
       class Installed < Plugins
         self.summary = 'List plugins installed on your machine'
         self.description = <<-DESC
                 List all installed plugins and their
-                respective version
+                respective version.
         DESC
 
         def self.options
@@ -30,6 +31,12 @@ module Pod
 
         private
 
+        # Print the given plugins as a compact list, one line
+        # per plugin with only its name & version
+        #
+        # @param [Array<Gem::Specification>] plugins
+        #        The list of plugins to print
+        #
         def print_compact_list(plugins)
           max_length = plugins.map { |p| p.name.length }.max
           plugins.each do |plugin|
@@ -38,6 +45,13 @@ module Pod
           end
         end
 
+        # Print the given plugins as a verbose list,
+        #    with name, version, homepage and summary
+        #    for each plugin.
+        #
+        # @param [Array<Gem::Specification>] plugins
+        #        The list of plugins to print
+        #
         def print_verbose_list(plugins)
           plugins.each do |plugin|
             UI.title(plugin.name)
