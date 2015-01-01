@@ -68,7 +68,7 @@ module Pod
           end
         end
 
-        # List of registered hook for the given plugin (if any)
+        # List of registered hook(s) (if any) for the given plugin
         #
         # @return [Array<String>]
         #         List of hooks the given plugin did register for.
