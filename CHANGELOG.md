@@ -1,5 +1,10 @@
 # Cocoapods::Plugins Changelog
 
+## Master
+
+* Added the `pod plugins installed` subcommand.  
+  [Olivier Halligon](https://github.com/AliSoftware)
+
 ## 0.4.0
 
 * Added the `pod plugins publish` subcommand.  

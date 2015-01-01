@@ -19,22 +19,33 @@ module Pod
 
         def run
           plugins = CLAide::Command::PluginManager.specifications
-          max_length = plugins.map { |p| p.name.length }.max
-          
           UI.title 'Installed CocoaPods Plugins:' do
-            plugins.each do |plugin|
-              if self.verbose?
-                UI.title(plugin.name)
-                UI.labeled('Version', plugin.version)
-                UI.labeled('Homepage', plugin.homepage) if plugin.homepage
-                UI.labeled('Summary', plugin.summary)
-              else
-                UI.puts_indented " - #{plugin.name.ljust(max_length)} : #{plugin.version}"
-              end
+            if self.verbose?
+              print_verbose_list(plugins)
+            else
+              print_compact_list(plugins)
             end
           end
         end
 
+        private
+
+        def print_compact_list(plugins)
+          max_length = plugins.map { |p| p.name.length }.max
+          plugins.each do |plugin|
+            name_just = plugin.name.ljust(max_length)
+            UI.puts_indented " - #{name_just} : #{plugin.version}"
+          end
+        end
+
+        def print_verbose_list(plugins)
+          plugins.each do |plugin|
+            UI.title(plugin.name)
+            UI.labeled('Version', plugin.version)
+            UI.labeled('Homepage', plugin.homepage) if plugin.homepage
+            UI.labeled('Summary', plugin.summary)
+          end
+        end
       end
     end
   end
