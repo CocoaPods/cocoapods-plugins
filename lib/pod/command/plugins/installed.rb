@@ -22,7 +22,7 @@ module Pod
           plugins = CLAide::Command::PluginManager.specifications
 
           UI.title 'Installed CocoaPods Plugins:' do
-            if self.verbose?
+            if verbose?
               print_verbose_list(plugins)
             else
               print_compact_list(plugins)
@@ -43,7 +43,11 @@ module Pod
           plugins.each do |plugin|
             name_just = plugin.name.ljust(max_length)
             hooks = registered_hooks(plugin)
-            hooks_list = hooks.empty? ? '' : " (#{hooks.join(' & ')} hook)"
+            hooks_list = ''
+            unless hooks.empty?
+              suffix = 'hook'.pluralize(hooks.count)
+              hooks_list = " (#{hooks.to_sentence} #{suffix})"
+            end
             UI.puts_indented " - #{name_just} : #{plugin.version}#{hooks_list}"
           end
         end
