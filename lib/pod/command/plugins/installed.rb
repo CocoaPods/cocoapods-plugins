@@ -20,6 +20,7 @@ module Pod
 
         def run
           plugins = CLAide::Command::PluginManager.specifications
+
           UI.title 'Installed CocoaPods Plugins:' do
             if self.verbose?
               print_verbose_list(plugins)
@@ -32,7 +33,7 @@ module Pod
         private
 
         # Print the given plugins as a compact list, one line
-        # per plugin with only its name & version
+        #   per plugin with only its name & version
         #
         # @param [Array<Gem::Specification>] plugins
         #        The list of plugins to print
@@ -41,23 +42,44 @@ module Pod
           max_length = plugins.map { |p| p.name.length }.max
           plugins.each do |plugin|
             name_just = plugin.name.ljust(max_length)
-            UI.puts_indented " - #{name_just} : #{plugin.version}"
+            hooks = registered_hooks(plugin)
+            hooks_list = hooks.empty? ? '' : " (#{hooks.join(' & ')} hook)"
+            UI.puts_indented " - #{name_just} : #{plugin.version}#{hooks_list}"
           end
         end
 
-        # Print the given plugins as a verbose list,
-        #    with name, version, homepage and summary
-        #    for each plugin.
+        # Print the given plugins as a verbose list, with name, version,
+        #   homepage and summary for each plugin.
         #
         # @param [Array<Gem::Specification>] plugins
         #        The list of plugins to print
         #
         def print_verbose_list(plugins)
           plugins.each do |plugin|
+            hooks = registered_hooks(plugin)
+
             UI.title(plugin.name)
-            UI.labeled('Version', plugin.version)
-            UI.labeled('Homepage', plugin.homepage) if plugin.homepage
+            UI.labeled('Version', plugin.version.to_s)
+            UI.labeled('Hooks', hooks) unless hooks.empty?
+            unless plugin.homepage.empty?
+              UI.labeled('Homepage', plugin.homepage)
+            end
             UI.labeled('Summary', plugin.summary)
+          end
+        end
+
+        # List of registered hook for the given plugin (if any)
+        #
+        # @return [Array<String>]
+        #         List of hooks the given plugin did register for.
+        #
+        def registered_hooks(plugin)
+          registrations = Pod::HooksManager.registrations
+          return [] if registrations.nil?
+
+          registrations.reduce([]) do |list, (name, hooks)|
+            list.push(name) if hooks.any? { |h| h.plugin_name == plugin.name }
+            list
           end
         end
       end
