@@ -72,10 +72,10 @@ module Pod
           end
         end
 
-        # List of registered hook(s) (if any) for the given plugin
+        # Names of the registered hook(s) (if any) for the given plugin
         #
         # @return [Array<String>]
-        #         List of hooks the given plugin did register for.
+        #         Names of the hooks the given plugin did register for.
         #
         def registered_hooks(plugin)
           registrations = Pod::HooksManager.registrations
