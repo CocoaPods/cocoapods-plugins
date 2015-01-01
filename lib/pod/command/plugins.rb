@@ -12,6 +12,7 @@ module Pod
       require 'pod/command/plugins/search'
       require 'pod/command/plugins/create'
       require 'pod/command/plugins/publish'
+      require 'pod/command/plugins/installed'
 
       self.abstract_command = true
       self.default_subcommand = 'list'
