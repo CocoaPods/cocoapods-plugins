@@ -99,6 +99,7 @@
     {
       "gem":"cocoapods-watch",
       "name":"Pod watch",
+      "author":"Marin Usalj",
       "url":"https://github.com/supermarin/cocoapods-watch",
       "description":"Watch for Podfile changes and run pod install."
     },
