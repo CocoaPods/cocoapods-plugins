@@ -144,6 +144,14 @@
       "author":"Kyle Fuller, Boris Bügling",
       "url":"https://github.com/CocoaPods/cocoapods-packager",
       "description":"Generate a framework or static library from a podspec."
+    },
+    {
+      "gem":"cocoapods-links",
+      "name":"Pod links",
+      "author":"Mike Owens",
+      "social_media_url":"https://twitter.com/mikejowens",
+      "url":"https://github.com/mowens/cocoapods-links",
+      "description":"A CocoaPods plugin to manage local development pods"
     }
   ]
 }
