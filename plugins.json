@@ -147,7 +147,7 @@
     },
     {
       "gem":"cocoapods-links",
-      "name":"Pod links",
+      "name":"CocoaPod Links",
       "author":"Mike Owens",
       "social_media_url":"https://twitter.com/mikejowens",
       "url":"https://github.com/mowens/cocoapods-links",
