@@ -27,7 +27,6 @@ module Pod
 
     before do
       UI.output = ''
-      Pod::HooksManager.registrations
     end
 
     it 'registers itself' do
