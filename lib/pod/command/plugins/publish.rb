@@ -1,5 +1,5 @@
 require 'json'
-require 'CGI'
+require 'cgi'
 
 module Pod
   class Command
