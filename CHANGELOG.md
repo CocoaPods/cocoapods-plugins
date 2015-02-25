@@ -1,6 +1,6 @@
 # Cocoapods::Plugins Changelog
 
-## Master
+## 0.4.1
 
 * Added the `pod plugins installed` subcommand.  
   [Olivier Halligon](https://github.com/AliSoftware)
