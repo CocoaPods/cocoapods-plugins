@@ -153,6 +153,14 @@
       "social_media_url":"https://twitter.com/mikejowens",
       "url":"https://github.com/mowens/cocoapods-links",
       "description":"A CocoaPods plugin to manage local development pods"
+    },
+    {
+      "gem": "cocoapods-prune-localizations",
+      "name": "CocoaPods Prune Localizations",
+      "author": "Diego Torres",
+      "social_media_url": "https://twitter.com/dtorres",
+      "url": "https://github.com/dtorres/cocoapods-prune-localizations",
+      "description": "Upon running pod install, this plugin will remove unused localizations by your project"
     }
   ]
 }
