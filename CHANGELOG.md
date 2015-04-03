@@ -1,5 +1,8 @@
 # Cocoapods::Plugins Changelog
 
+## 0.4.2
+
+
 ## 0.4.1
 
 * Added the `pod plugins installed` subcommand.  
