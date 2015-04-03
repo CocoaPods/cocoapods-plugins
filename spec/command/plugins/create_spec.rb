@@ -68,7 +68,7 @@ module Pod
 
       template_repo = 'https://github.com/CocoaPods/' \
         'cocoapods-plugin-template.git'
-      git_command = "clone '#{template_repo}' cocoapods-banana"
+      git_command = ['clone', template_repo, 'cocoapods-banana']
       @command.expects(:git!).with(git_command)
       @command.expects(:configure_template)
       @command.run
@@ -80,7 +80,7 @@ module Pod
         'cocoapods-banana-plugin-template.git'
       @command = create_command('cocoapods-banana', alt_repo)
 
-      @command.expects(:git!).with("clone '#{alt_repo}' cocoapods-banana")
+      @command.expects(:git!).with(['clone', alt_repo, 'cocoapods-banana'])
       @command.expects(:configure_template)
       @command.run
       UI.output.should.include('Creating `cocoapods-banana` plugin')

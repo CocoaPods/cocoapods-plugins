@@ -57,7 +57,6 @@ module Pod
 
         extend Executable
         executable :git
-        executable :ruby
 
         TEMPLATE_BASE_URL = 'https://github.com/CocoaPods/'
         TEMPLATE_REPO = TEMPLATE_BASE_URL + 'cocoapods-plugin-template.git'
@@ -71,7 +70,15 @@ module Pod
         def clone_template
           UI.section("-> Creating `#{@name}` plugin") do
             UI.notice "using template '#{template_repo_url}'"
-            git! "clone '#{template_repo_url}' #{@name}"
+            command = ['clone', template_repo_url, @name]
+            if method(:git!).arity == -1
+              git! command
+            else
+              # TODO: delete this conditional and use the other branch when
+              # 0.5.0 is released
+              require 'shellwords'
+              git! command.map(&:to_s).map(&:shellescape).join(' ')
+            end
           end
         end
 
