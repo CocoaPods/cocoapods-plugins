@@ -4,7 +4,6 @@ require File.expand_path('../spec_helper', File.dirname(__FILE__))
 #
 module Pod
   describe Command::GemIndexCache do
-
     before do
       @cache = Command::GemIndexCache.new
       UI.output = ''
@@ -34,6 +33,5 @@ module Pod
       UI.output.should.include('Downloading Rubygem specification index...')
       UI.output.should.include('Error downloading Rubygem specification')
     end
-
   end
 end

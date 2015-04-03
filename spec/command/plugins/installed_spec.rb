@@ -37,7 +37,6 @@ module Pod
     #--- Output printing
 
     describe 'Compact List' do
-
       before do
         @command = Pod::Command::Plugins::Installed.new CLAide::ARGV.new([])
       end
@@ -75,7 +74,6 @@ module Pod
     end
 
     describe 'Verbose List' do
-
       before do
         verbose_args = CLAide::ARGV.new(['--verbose'])
         @command = Pod::Command::Plugins::Installed.new verbose_args

@@ -128,6 +128,5 @@ Please add the following entry to the `plugins.json` file:
         command.run
       end
     end
-
   end
 end

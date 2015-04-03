@@ -29,6 +29,5 @@ module Pod
         Command::PluginsHelper.download_json
       end.message.should.match(expected_error)
     end
-
   end
 end
