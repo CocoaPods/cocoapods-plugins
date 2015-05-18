@@ -168,6 +168,13 @@
       "author": "Mason Glidden",
       "url": "https://github.com/Yelp/cocoapods-readonly",
       "description": "Developers switching from submodules are used to modifying library source files from within Xcode. This locks those files as needed so Xcode warns you when attempting to edit them."
+    },
+    {
+      "gem": "cocoapods-thumbs",
+      "name": "CocoaPods Thumbs",
+      "author": "Pablo Bendersky",
+      "url": "https://github.com/quadion/cocoapods-thumbs",
+      "description": "Use cocoapods-thumbs to check upvotes or downvotes of Podspecs from your peers based on past experiences."
     }
   ]
 }
