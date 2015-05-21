@@ -175,6 +175,13 @@
       "author": "Pablo Bendersky",
       "url": "https://github.com/quadion/cocoapods-thumbs",
       "description": "Use cocoapods-thumbs to check upvotes or downvotes of Podspecs from your peers based on past experiences."
+    },
+    {
+      "gem": "cocoapods-blacklist",
+      "name": "CocoaPods Blacklist",
+      "author": "David Grandinetti",
+      "url": "https://github.com/yahoo/cocoapods-blacklist",
+      "description": "Check if a project is using a banned version of a pod. Handy for security audits."
     }
   ]
 }
