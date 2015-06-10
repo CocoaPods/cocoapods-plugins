@@ -182,6 +182,13 @@
       "author": "David Grandinetti",
       "url": "https://github.com/yahoo/cocoapods-blacklist",
       "description": "Check if a project is using a banned version of a pod. Handy for security audits."
+    },
+    {
+      "gem": "cocoapods-superdeintegrate",
+      "name": "CocoaPods Superdeintegrate",
+      "author": "Ash Furrow",
+      "url": "https://github.com/ashfurrow/cocoapods-superdeintegrate",
+      "description": "Deletes the CocoaPods cache, your derived data folder, and makes sure that your Pods directory is gone."
     }
   ]
 }
