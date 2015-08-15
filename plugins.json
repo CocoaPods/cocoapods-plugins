@@ -189,6 +189,13 @@
       "author": "Ash Furrow",
       "url": "https://github.com/ashfurrow/cocoapods-superdeintegrate",
       "description": "Deletes the CocoaPods cache, your derived data folder, and makes sure that your Pods directory is gone."
+    },
+    {
+      "gem": "cocoapods-archive",
+      "name": "CocoaPods Archive",
+      "author": "fjbelchi, alexito4",
+      "url": "https://github.com/fjbelchi/cocoapods-archive",
+      "description": "cocoapods-archive plugin that archive your project"
     }
   ]
 }
