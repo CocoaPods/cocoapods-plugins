@@ -196,6 +196,13 @@
       "author": "fjbelchi, alexito4",
       "url": "https://github.com/fjbelchi/cocoapods-archive",
       "description": "cocoapods-archive plugin that archive your project"
+    },
+    {
+      "gem": "cocoapods-check",
+      "name": "CocoaPods Check",
+      "author": "Matt Di Iorio",
+      "url": "https://github.com/square/cocoapods-check",
+      "description": "Displays differences between locked and installed Pods"
     }
   ]
 }
