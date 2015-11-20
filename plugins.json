@@ -203,6 +203,13 @@
       "author": "Matt Di Iorio",
       "url": "https://github.com/square/cocoapods-check",
       "description": "Displays differences between locked and installed Pods"
+    },
+    {
+      "gem": "cocoapods-acknowledgements",
+      "name": "CocoaPods Acknowledgements",
+      "author": "Fabio Pelosin, Orta Therox, Marcelo Fabri",
+      "url": "https://github.com/CocoaPods/cocoapods-acknowledgements",
+      "description": "CocoaPods plugin that generates an acknowledgements plist to make it easy to create tools to use in apps."
     }
   ]
 }
