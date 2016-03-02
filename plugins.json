@@ -210,6 +210,13 @@
       "author": "Fabio Pelosin, Orta Therox, Marcelo Fabri",
       "url": "https://github.com/CocoaPods/cocoapods-acknowledgements",
       "description": "CocoaPods plugin that generates an acknowledgements plist to make it easy to create tools to use in apps."
+    },
+    {
+      "gem": "cocoapods-generator",
+      "name": "CocoaPods Generator",
+      "author": "从权",
+      "url": "https://github.com/zhzhy/cocoapods-generator",
+      "description": "Add files to empty target from *.podspec, such as souce files, libraries, frameworks, resources and so on."
     }
   ]
 }
