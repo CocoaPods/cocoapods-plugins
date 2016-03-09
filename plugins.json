@@ -9,6 +9,14 @@
       "description": "Generates docset and documentation for a pod."
     },
     {
+      "gem": "cocoapods-deploy",
+      "name": "Deploy",
+      "author": "James Campbell",
+      "social_media_url": "https://twitter.com/jcampbell_05",
+      "url": "https://github.com/jcampbell05/cocoapods-deploy",
+      "description": "Deploys dependencies for a CocoaPods project without needing to clone the repo (Similar to Bundler's `--deployment`)."
+    },
+    {
       "gem": "cocoapods-deintegrate",
       "name": "Deintegrate",
       "author": "Kyle Fuller",
