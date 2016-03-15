@@ -22,7 +22,7 @@
       "author": "Boris Bügling",
       "social_media_url": "https://twitter.com/neonichu",
       "url": "https://github.com/neonichu/rome",
-      "description": "Makes it easy to build a list of frameworks (Similar to Carthage)."
+      "description": "Rome makes it easy to build a list of frameworks for consumption outside of Xcode, e.g. for a Swift script."
     },
     {
       "gem": "cocoapods-deintegrate",
