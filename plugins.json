@@ -17,6 +17,14 @@
       "description": "Deploys dependencies for a CocoaPods project without needing to clone the repo (Similar to Bundler's `--deployment`)."
     },
     {
+      "gem": "cocoapods-rome",
+      "name": "Rome",
+      "author": "Boris Bügling",
+      "social_media_url": "https://twitter.com/neonichu",
+      "url": "https://github.com/neonichu/rome",
+      "description": "Makes it easy to build a list of frameworks (Similar to Carthage)."
+    },
+    {
       "gem": "cocoapods-deintegrate",
       "name": "Deintegrate",
       "author": "Kyle Fuller",
