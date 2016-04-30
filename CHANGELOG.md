@@ -1,5 +1,16 @@
 # Cocoapods::Plugins Changelog
 
+## Master
+
+##### Enhancements
+
+* None.  
+
+##### Bug Fixes
+
+* None.  
+
+
 ## 1.0.0.rc.1 (2016-04-30)
 
 This version contains no changes.  
