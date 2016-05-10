@@ -15,7 +15,7 @@ GIT
       claide (~> 0.8.1)
       cocoapods-core (= 0.36.3)
       cocoapods-downloader (~> 0.9.0)
-      cocoapods-plugins (= 1.0.0.rc.1)
+      cocoapods-plugins (= 1.0.0)
       cocoapods-trunk (~> 0.6.0)
       cocoapods-try (~> 0.4.3)
       colored (~> 1.2)
@@ -38,7 +38,7 @@ GIT
 PATH
   remote: .
   specs:
-    cocoapods-plugins (1.0.0.rc.1)
+    cocoapods-plugins (1.0.0)
       nap
 
 GEM
