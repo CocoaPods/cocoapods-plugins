@@ -240,6 +240,13 @@
       "author": "Samuel Giddins",
       "url": "https://github.com/segiddins/cocoapods-debug",
       "description": "A simple plugin to ease debugging CocoaPods."
+    },
+    {
+      "gem": "cocoapods-art",
+      "name": "CocoaPods Artifactory Plugin",
+      "author": "Dan Feldman",
+      "url": "https://github.com/JFrogDev/cocoapods-art",
+      "description": "Enables usage of Artifactory as an index for CocoaPods repo and as a repository for pods."
     }
   ]
 }
