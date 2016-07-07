@@ -247,6 +247,13 @@
       "author": "Dan Feldman",
       "url": "https://github.com/JFrogDev/cocoapods-art",
       "description": "Enables usage of Artifactory as an index for CocoaPods repo and as a repository for pods."
+    },
+    {
+      "gem": "cocoapods-update-if-you-dare",
+      "name": "CocoaPods Update If You Dare",
+      "author": "Ashton Williams",
+      "url": "https://github.com/Ashton-W/cocoapods-update-if-you-dare",
+      "description": "update ... if you dare (warns users before updating all pods at once)"
     }
   ]
 }
