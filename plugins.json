@@ -254,6 +254,13 @@
       "author": "Ashton Williams",
       "url": "https://github.com/Ashton-W/cocoapods-update-if-you-dare",
       "description": "update ... if you dare (warns users before updating all pods at once)"
+    },
+    {
+      "gem": "cocoapods-uploader",
+      "name": "CocoaPods Uploader",
+      "author": "supern_lee",
+      "url": "https://github.com/alibaba/cocoapods-uploader",
+      "description": "Upload file/dir to remote storage."
     }
   ]
 }
