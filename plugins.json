@@ -261,6 +261,13 @@
       "author": "supern_lee",
       "url": "https://github.com/alibaba/cocoapods-uploader",
       "description": "Upload file/dir to remote storage."
+    },
+    {
+      "gem": "cocoapods-mix-frameworks",
+      "name": "CocoaPods Mix Frameworks",
+      "author": "Florent Vilmart",
+      "url": "https://github.com/flovilmart/cocoapods-mix-frameworks",
+      "description": "Mix use_framework! targets with static targets through a surrogate Framework target."
     }
   ]
 }
