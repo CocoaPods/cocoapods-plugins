@@ -275,6 +275,13 @@
       "author": "Keith Smiley",
       "url": "https://github.com/keith/cocoapods-foundation-headers",
       "description": "A CocoaPods plugin for using Foundation instead of UIKit/Cocoa in generated headers"
+    },
+    {
+      "gem": "cocoapods-githooks",
+      "name": "CocoaPods Githooks",
+      "author": "Vlad Korzun",
+      "url": "https://github.com/VladKorzun/cocoapods-githooks",
+      "description": "A CocoaPods plugin that syncs git hooks between team members"
     }
   ]
 }
