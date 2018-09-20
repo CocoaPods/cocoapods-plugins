@@ -282,6 +282,13 @@
       "author": "Vlad Korzun",
       "url": "https://github.com/VladKorzun/cocoapods-githooks",
       "description": "A CocoaPods plugin that syncs git hooks between team members"
+    },
+    {
+      "gem": "cocoapods-ipub",
+      "name": "CocoaPods Ipub",
+      "author": "welkiner",
+      "url": "https://github.com/welkiner/cocoapods-ipub",
+      "description": "make a distinction between internal dependency and external dependency."
     }
   ]
 }
