@@ -209,9 +209,9 @@
     {
       "gem": "cocoapods-archive",
       "name": "CocoaPods Archive",
-      "author": "fjbelchi, alexito4",
-      "url": "https://github.com/fjbelchi/cocoapods-archive",
-      "description": "cocoapods-archive plugin that archive your project"
+      "author": "Braintree Open Source",
+      "url": "https://github.com/braintreeps/cocoapods-archive",
+      "description": "A CocoaPods plugin that enables you to archive your Pod as a static library"
     },
     {
       "gem": "cocoapods-check",
