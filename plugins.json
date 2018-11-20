@@ -105,6 +105,13 @@
       "description": "Adds mercurial support to manage spec-repositories."
     },
     {
+      "gem": "cocoapods-repo-update",
+      "name": "CocoaPods Repo Update",
+      "author": "James Treanor",
+      "url": "https://github.com/wordpress-mobile/cocoapods-repo-update",
+      "description": "cocoapods-repo-update is a CocoaPods plugin that checks your dependencies when you run `pod install` and updates the local specs repositories if needed."
+    },
+    {
       "gem": "cocoapods-try",
       "name": "Pod try",
       "author": "CocoaPods Dev Team",
