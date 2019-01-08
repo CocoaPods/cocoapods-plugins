@@ -259,6 +259,13 @@
       "author": "kerry",
       "url": "https://github.com/upgrad/cocoapods-integrate-flutter",
       "description": "A plugin to integrate flutter with existing iOS application."
+    },
+    {
+      "gem": "cocoapods-templates",
+      "name": "CocoaPods Templates",
+      "author": "Oliver Letterer",
+      "url": "https://github.com/layered-pieces/cocoapods-templates",
+      "description": "CocoaPods plugin to install Xcode templates from a remote source"
     }
   ]
 }
