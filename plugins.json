@@ -266,6 +266,13 @@
       "author": "Oliver Letterer",
       "url": "https://github.com/layered-pieces/cocoapods-templates",
       "description": "CocoaPods plugin to install Xcode templates from a remote source"
+    },
+    {
+      "gem": "cocoapods-mangle",
+      "name": "CocoaPods Mangle",
+      "author": "James Treanor",
+      "url": "https://github.com/intercom/cocoapods-mangle",
+      "description": "Mangling your dependencies symbols allows more than one copy of a dependency to exist without errors. This plugin mangles your dependencies to make this possible."
     }
   ]
 }
