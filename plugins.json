@@ -252,6 +252,13 @@
       "author": "Vlad Korzun",
       "url": "https://github.com/VladKorzun/cocoapods-githooks",
       "description": "A CocoaPods plugin that syncs git hooks between team members"
+    },
+    {
+      "gem": "cocoapods-integrate-flutter",
+      "name": "CocoaPods Integrate Flutter",
+      "author": "kerry",
+      "url": "https://github.com/upgrad/cocoapods-integrate-flutter",
+      "description": "A plugin to integrate flutter with existing iOS application."
     }
   ]
 }
