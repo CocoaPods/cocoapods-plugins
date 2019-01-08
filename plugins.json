@@ -104,14 +104,6 @@
       "description": "cocoapods-repo-update is a CocoaPods plugin that checks your dependencies when you run `pod install` and updates the local specs repositories if needed."
     },
     {
-      "gem": "cocoapods-try",
-      "name": "Pod try",
-      "author": "CocoaPods Dev Team",
-      "social_media_url": "http://twitter.com/CocoaPods",
-      "url": "https://github.com/CocoaPods/cocoapods-try",
-      "description": "Quickly try the demo project of a Pod."
-    },
-    {
       "gem": "cocoapods-watch",
       "name": "Pod watch",
       "author": "Marin Usalj",
