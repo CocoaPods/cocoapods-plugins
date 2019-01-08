@@ -25,14 +25,6 @@
       "description": "Rome makes it easy to build a list of frameworks for consumption outside of Xcode, e.g. for a Swift script."
     },
     {
-      "gem": "cocoapods-deintegrate",
-      "name": "Deintegrate",
-      "author": "Kyle Fuller",
-      "social_media_url": "http://twitter.com/kylefuller",
-      "url": "https://github.com/kylef/cocoapods-deintegrate",
-      "description": "Deintegrates a project from CocoaPods."
-    },
-    {
       "gem": "cocoapods-dependencies",
       "name": "Pod Dependencies",
       "author": "Samuel E. Giddins",
@@ -149,13 +141,6 @@
       "description": "Tags and releases pods for you."
     },
     {
-      "gem": "cocoapods-clean",
-      "name": "cocoapods clean",
-      "author": "Luca Querella",
-      "url": "https://github.com/BendingSpoons/cocoapods-clean",
-      "description": "Remove Podfile.lock, Pods/ and *.xcworkspace."
-    },
-    {
       "gem": "cocoapods-keys",
       "name": "CocoaPods Keys",
       "author": "Orta Therox, Samuel E. Giddins",
@@ -186,13 +171,6 @@
       "description": "Upon running pod install, this plugin will remove unused localizations by your project"
     },
     {
-      "gem": "cocoapods-readonly",
-      "name": "CocoaPods Readonly",
-      "author": "Mason Glidden",
-      "url": "https://github.com/Yelp/cocoapods-readonly",
-      "description": "Developers switching from submodules are used to modifying library source files from within Xcode. This locks those files as needed so Xcode warns you when attempting to edit them."
-    },
-    {
       "gem": "cocoapods-thumbs",
       "name": "CocoaPods Thumbs",
       "author": "Pablo Bendersky",
@@ -205,13 +183,6 @@
       "author": "David Grandinetti",
       "url": "https://github.com/yahoo/cocoapods-blacklist",
       "description": "Check if a project is using a banned version of a pod. Handy for security audits."
-    },
-    {
-      "gem": "cocoapods-superdeintegrate",
-      "name": "CocoaPods Superdeintegrate",
-      "author": "Ash Furrow",
-      "url": "https://github.com/ashfurrow/cocoapods-superdeintegrate",
-      "description": "Deletes the CocoaPods cache, your derived data folder, and makes sure that your Pods directory is gone."
     },
     {
       "gem": "cocoapods-archive",
@@ -289,13 +260,6 @@
       "author": "Vlad Korzun",
       "url": "https://github.com/VladKorzun/cocoapods-githooks",
       "description": "A CocoaPods plugin that syncs git hooks between team members"
-    },
-    {
-      "gem": "cocoapods-ipub",
-      "name": "CocoaPods Ipub",
-      "author": "welkiner",
-      "url": "https://github.com/welkiner/cocoapods-ipub",
-      "description": "make a distinction between internal dependency and external dependency."
     }
   ]
 }
