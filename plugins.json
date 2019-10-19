@@ -273,6 +273,13 @@
       "author": "James Treanor",
       "url": "https://github.com/intercom/cocoapods-mangle",
       "description": "Mangling your dependencies symbols allows more than one copy of a dependency to exist without errors. This plugin mangles your dependencies to make this possible."
+    },
+    {
+      "gem": "cocoapods-pod-merge",
+      "name": "Cocoapods Pod Merge",
+      "author": "Siddharth Gupta",
+      "url": "https://github.com/grab/cocoapods-pod-merge",
+      "description": "Merge pods used by your iOS project, reducing the number of dynamic frameworks your app has to load on startup"
     }
   ]
 }
