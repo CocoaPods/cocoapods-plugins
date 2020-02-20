@@ -65,6 +65,14 @@
       "description": "Showing documentation metrics of Pods."
     },
     {
+      "gem": "cocoapods-git-tarball",
+      "name": "git tarball",
+      "author": "Igor Makarov",
+      "social_media_url": "https://twitter.com/igormaka",
+      "url": "https://github.com/igor-makarov/cocoapods-git-tarball",
+      "description": "Speed up downloads of pods from public git repos by using tarballs, if possible."
+    },
+    {
       "gem": "cocoapods-open",
       "name": "open",
       "author": "Les Hill",
