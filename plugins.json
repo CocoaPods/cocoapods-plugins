@@ -295,6 +295,13 @@
       "author": "Jonathan Cardasis",
       "url": "https://github.com/joncardasis/cocoapods-user-defined-build-types",
       "description": "A CocoaPods plugin which can selectively set build type per pod (static library, dynamic framework, etc.)"
+    },
+    {
+      "gem": "cocoapods-xPlugin",
+      "name": "Cocoapods xPlugin",
+      "author": "段清伦",
+      "url": "https://github.com/qinglong61/cocoapods-xPlugin",
+      "description": "a CocoaPods plugin for more fast pod install"
     }
   ]
 }
