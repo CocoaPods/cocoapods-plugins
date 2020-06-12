@@ -178,10 +178,10 @@
       "description": "Use cocoapods-thumbs to check upvotes or downvotes of Podspecs from your peers based on past experiences."
     },
     {
-      "gem": "cocoapods-blacklist",
-      "name": "CocoaPods Blacklist",
+      "gem": "cocoapods-blocklist",
+      "name": "CocoaPods Blocklist",
       "author": "David Grandinetti",
-      "url": "https://github.com/yahoo/cocoapods-blacklist",
+      "url": "https://github.com/yahoo/cocoapods-blocklist",
       "description": "Check if a project is using a banned version of a pod. Handy for security audits."
     },
     {
