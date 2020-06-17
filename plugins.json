@@ -295,6 +295,13 @@
       "author": "Jonathan Cardasis",
       "url": "https://github.com/joncardasis/cocoapods-user-defined-build-types",
       "description": "A CocoaPods plugin which can selectively set build type per pod (static library, dynamic framework, etc.)"
+    },
+    {
+      "gem": "cocoapods-s3-download",
+      "name": "CocoaPods source from AWS S3",
+      "author": "Samuel Abreu",
+      "url": "https://github.com/samuelabreu/cocoapods-s3-download",
+      "description": "A CocoaPods plugin to download sources from AWS S3 using pre signed urls"
     }
   ]
 }
