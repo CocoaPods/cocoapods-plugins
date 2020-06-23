@@ -302,6 +302,20 @@
       "author": "Samuel Abreu",
       "url": "https://github.com/samuelabreu/cocoapods-s3-download",
       "description": "A CocoaPods plugin to download sources from AWS S3 using pre signed urls"
+    },
+    {
+      "gem": "cocoapods-query",
+      "name": "CocoaPods Query",
+      "author": "Trevor Harmon",
+      "url": "https://github.com/square/cocoapods-query",
+      "description": "Shows all CocoaPods in a project filtered by search term (author name, source file, dependency, etc.)"
+    },
+    {
+      "gem": "cocoapods-why",
+      "name": "CocoaPods Why",
+      "author": "Trevor Harmon",
+      "url": "https://github.com/square/cocoapods-why",
+      "description": "Shows why one CocoaPod depends on another"
     }
   ]
 }
