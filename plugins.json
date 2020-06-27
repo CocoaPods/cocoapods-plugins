@@ -178,10 +178,10 @@
       "description": "Use cocoapods-thumbs to check upvotes or downvotes of Podspecs from your peers based on past experiences."
     },
     {
-      "gem": "cocoapods-blacklist",
-      "name": "CocoaPods Blacklist",
+      "gem": "cocoapods-blocklist",
+      "name": "CocoaPods Blocklist",
       "author": "David Grandinetti",
-      "url": "https://github.com/yahoo/cocoapods-blacklist",
+      "url": "https://github.com/yahoo/cocoapods-blocklist",
       "description": "Check if a project is using a banned version of a pod. Handy for security audits."
     },
     {
@@ -302,6 +302,27 @@
       "author": "段清伦",
       "url": "https://github.com/qinglong61/cocoapods-xPlugin",
       "description": "a CocoaPods plugin for more fast pod install"
+    },
+    {
+      "gem": "cocoapods-s3-download",
+      "name": "CocoaPods source from AWS S3",
+      "author": "Samuel Abreu",
+      "url": "https://github.com/samuelabreu/cocoapods-s3-download",
+      "description": "A CocoaPods plugin to download sources from AWS S3 using pre signed urls"
+    },
+    {
+      "gem": "cocoapods-query",
+      "name": "CocoaPods Query",
+      "author": "Trevor Harmon",
+      "url": "https://github.com/square/cocoapods-query",
+      "description": "Shows all CocoaPods in a project filtered by search term (author name, source file, dependency, etc.)"
+    },
+    {
+      "gem": "cocoapods-why",
+      "name": "CocoaPods Why",
+      "author": "Trevor Harmon",
+      "url": "https://github.com/square/cocoapods-why",
+      "description": "Shows why one CocoaPod depends on another"
     }
   ]
 }
