@@ -316,6 +316,13 @@
       "author": "Trevor Harmon",
       "url": "https://github.com/square/cocoapods-why",
       "description": "Shows why one CocoaPod depends on another"
+    },
+    {
+      "gem": "cocoapods-ybin",
+      "name": "CocoaPods Ybin",
+      "author": "monetking",
+      "url": "https://github.com/monetking/cocoapods-ybin.git",
+      "description": "link source and binary."
     }
   ]
 }
