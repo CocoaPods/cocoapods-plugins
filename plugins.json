@@ -316,6 +316,13 @@
       "author": "Trevor Harmon",
       "url": "https://github.com/square/cocoapods-why",
       "description": "Shows why one CocoaPod depends on another"
+    },
+    {
+      "gem": "cocoapods-azure-universal-packages",
+      "name": "Azure Universal Packages",
+      "author": "Microsoft Corporation",
+      "url": "https://github.com/microsoft/cocoapods-azure-universal-packages",
+      "description": "Enables CocoaPods to download Universal Packages from Azure Artifacts feeds."
     }
   ]
 }
