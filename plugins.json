@@ -323,6 +323,13 @@
       "author": "Microsoft Corporation",
       "url": "https://github.com/microsoft/cocoapods-azure-universal-packages",
       "description": "Enables CocoaPods to download Universal Packages from Azure Artifacts feeds."
+    },
+    {
+      "gem": "cocoapods-dependency-graph",
+      "name": "cocoapods dependency graph",
+      "author": "RY Zheng",
+      "url": "https://github.com/sueLan/cocoapods-dependency-graph",
+      "description": "Create the dependency graph for project using Cocoapods"
     }
   ]
 }
