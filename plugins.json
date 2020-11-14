@@ -290,6 +290,13 @@
       "description": "Merge pods used by your iOS project, reducing the number of dynamic frameworks your app has to load on startup"
     },
     {
+      "gem": "cocoapods-binary-cache",
+      "name": "CocoaPods Binary Cache",
+      "author": "Bang Nguyen",
+      "url": "https://github.com/grab/cocoapods-binary-cache",
+      "description": "Reduce iOS project build time by prebuilding pod frameworks, caching them to remote storage, and reusing them on multiple machines"
+    },
+    {
       "gem": "cocoapods-user-defined-build-types",
       "name": "CocoaPods User Defined Build Types",
       "author": "Jonathan Cardasis",
