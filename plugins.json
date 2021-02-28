@@ -323,6 +323,13 @@
       "author": "Microsoft Corporation",
       "url": "https://github.com/microsoft/cocoapods-azure-universal-packages",
       "description": "Enables CocoaPods to download Universal Packages from Azure Artifacts feeds."
+    },
+    {
+      "gem": "cocoapods-catalyst-support",
+      "name": "CocoaPods Catalyst Support",
+      "author": "fermoya",
+      "url": "https://github.com/fermoya/cocoapods-catalyst-support",
+      "description": "Many libraries you may use for iOS won't compile for your macCatalyst App, thus, making porting your App to the Mac world more difficult than initially expected. This is due to those libraries not being compiled for `x86_64`. `cocoapods-catalyst-support` helps you configure which libraries you'll be using for iOS and which for macCatalyst."
     }
   ]
 }
