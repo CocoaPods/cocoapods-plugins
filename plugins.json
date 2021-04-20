@@ -323,6 +323,13 @@
       "author": "Microsoft Corporation",
       "url": "https://github.com/microsoft/cocoapods-azure-universal-packages",
       "description": "Enables CocoaPods to download Universal Packages from Azure Artifacts feeds."
+    },
+    {
+      "gem": "cocoapods-pod-linkage",
+      "name": "Pod Linkage",
+      "author": "Microsoft Corporation",
+      "url": "https://github.com/microsoft/cocoapods-pod-linkage",
+      "description": "A CocoaPods plugin for configuring the linkage type of a specific pod."
     }
   ]
 }
