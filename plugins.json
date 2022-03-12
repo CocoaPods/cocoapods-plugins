@@ -330,6 +330,13 @@
       "author": "Microsoft Corporation",
       "url": "https://github.com/microsoft/cocoapods-pod-linkage",
       "description": "A CocoaPods plugin for configuring the linkage type of a specific pod."
+    },
+    {
+      "gem": "cocoapods-embed-flutter",
+      "name": "CocoaPods Embed Flutter",
+      "author": "Soumya Ranjan Mahunt",
+      "url": "https://github.com/DartBuild/cocoapods-embed-flutter",
+      "description": "Straight forward way of declaring flutter modules as dependency for targets, just like cocoapods does with pods."
     }
   ]
 }
