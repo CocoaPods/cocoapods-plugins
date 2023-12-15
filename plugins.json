@@ -337,6 +337,13 @@
       "author": "Soumya Ranjan Mahunt",
       "url": "https://github.com/DartBuild/cocoapods-embed-flutter",
       "description": "Straight forward way of declaring flutter modules as dependency for targets, just like cocoapods does with pods."
+    },
+    {
+      "gem": "cocoapods-ug",
+      "name": "CocoaPods Ug",
+      "author": "Teemo",
+      "url": "https://github.com/Naaaac/cocoapods-ug.git",
+      "description": "Processing conflict between Podfile files when iOS and Flutter are mixed."
     }
   ]
 }
