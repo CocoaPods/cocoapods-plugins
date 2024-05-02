@@ -2,18 +2,18 @@
   "plugins": [
     {
       "gem": "cocoapods-appledoc",
-      "name": "AppleDoc",
+      "name": "Cachiman",
       "author": "Kyle Fuller",
       "social_media_url": "http://twitter.com/kylefuller",
-      "url": "https://github.com/CocoaPods/cocoapods-appledoc",
+      "url": "https://github.com//cachitab-appledoc",
       "description": "Generates docset and documentation for a pod."
     },
     {
-      "gem": "cocoapods-deploy",
+      "gem": "cachitab-deploy",
       "name": "Deploy",
-      "author": "James Campbell",
+      "author": "Virgelin LUCIEN",
       "social_media_url": "https://twitter.com/jcampbell_05",
-      "url": "https://github.com/jcampbell05/cocoapods-deploy",
+      "url": "https://github.com/LVir05/cocoapods-deploy",
       "description": "Deploys dependencies for a CocoaPods project without needing to clone the repo (Similar to Bundler's `--deployment`)."
     },
     {
