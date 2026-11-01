@@ -20,13 +20,25 @@ module Pod
       #
       def self.download_json
         UI.puts 'Downloading Plugins list...'
-        response = REST.get(PLUGINS_RAW_URL)
-        if response.ok?
+        uri = URI.parse(PLUGINS_RAW_URL)
+        # Net::HTTP verifies the server certificate against the system trust
+        # store. The proxy is looked up from the URL so that https_proxy and
+        # no_proxy apply; Net::HTTP's own lookup only reads http_proxy.
+        proxy = uri.find_proxy
+        http = Net::HTTP.new(uri.host, uri.port,
+                             proxy && proxy.host, proxy && proxy.port,
+                             proxy && proxy.user, proxy && proxy.password)
+        http.use_ssl = true
+        response = http.start { |h| h.get(uri.request_uri) }
+        if response.code == '200'
           parse_json(response.body)
         else
           raise Informative, 'Could not download plugins list ' \
             "from cocoapods-plugins: #{response.inspect}"
         end
+      rescue OpenSSL::SSL::SSLError => e
+        raise Informative, 'Could not download plugins list ' \
+          "from cocoapods-plugins: #{e.message}"
       end
 
       # The list of all known plugins, according to
