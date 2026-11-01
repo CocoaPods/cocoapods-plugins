@@ -11,6 +11,7 @@
   If your network intercepts TLS, add its CA to the trust store your Ruby's
   OpenSSL uses (for example with `SSL_CERT_FILE`).  
   [Matthew Mongeau](https://github.com/halogenandtoast)
+  [#154](https://github.com/CocoaPods/cocoapods-plugins/pull/154)
 
 ##### Bug Fixes
 
