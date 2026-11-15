@@ -337,6 +337,13 @@
       "author": "Soumya Ranjan Mahunt",
       "url": "https://github.com/DartBuild/cocoapods-embed-flutter",
       "description": "Straight forward way of declaring flutter modules as dependency for targets, just like cocoapods does with pods."
+    },
+    {
+      "gem": "cocoapods-lockfile",
+      "name": "CocoaPods Lockfile",
+      "author": "Israel Soto",
+      "url": "https://github.com/SotoiGhost/cocoapods-lockfile",
+      "description": "A Cocoapods plugin that generates the Podfile.lock file without the need to download the Pods files."
     }
   ]
 }
