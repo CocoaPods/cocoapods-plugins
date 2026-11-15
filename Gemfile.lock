@@ -39,7 +39,6 @@ PATH
   remote: .
   specs:
     cocoapods-plugins (1.0.0)
-      nap
 
 GEM
   remote: https://rubygems.org/

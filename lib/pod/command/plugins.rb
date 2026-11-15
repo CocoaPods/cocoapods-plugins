@@ -1,4 +1,4 @@
-require 'rest'
+require 'net/http'
 require 'json'
 
 # The CocoaPods namespace
